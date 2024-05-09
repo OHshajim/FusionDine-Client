@@ -5,9 +5,11 @@ import Navbar from "../Components/Navbar";
 const Main = () => {
     return (
         <div>
-            <Navbar/>
-            <Outlet />
-            <Footer/>
+            <Navbar />
+            <div className="min-h-[calc(100vh-256px)]">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };

@@ -63,12 +63,12 @@ const Navbar = () => {
                         <div className="w-11 rounded-full ring"  >
                             <img src='' />
                         </div>
-                        <ul className={` gap-5 absolute  w-52 duration-500  p-5 
+                        <ul className={` absolute  w-52 duration-500  p-2 
                         menu menu-sm dropdown-content bg-black  shadow  rounded-box
-                                    ${isOpen ? 'top-14 right-0' : '-top-60 right-0'}`}>
-                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></ll>
-                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></ll>
-                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></ll>
+                                    ${isOpen ? 'top-14 right-0' : '-top-72 right-0'}`}>
+                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
+                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
+                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></li>
                         </ul>
                     </div>
                     {/* // : */}
