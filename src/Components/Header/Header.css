@@ -1,5 +1,5 @@
 .slide1 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.150) 100%),
+    background-image:
         url("https://i.ibb.co/26XfSRw/hero-img-2-2.jpg");
 
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@
 }
 
 .slide2 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.450), rgba(0, 0, 0, 0.300) 100%),
+    background-image:
         url("https://i.ibb.co/rp9BLm4/hero-img-2-1.jpg");
 
     background-repeat: no-repeat;
@@ -19,7 +19,7 @@
 }
 
 .slide3 {
-    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.639), rgba(0, 0, 0, 0.100) 100%),
+    background-image:
         url("https://i.ibb.co/m4Ct8QR/hero-img-2-3.jpg");
 
     background-repeat: no-repeat;

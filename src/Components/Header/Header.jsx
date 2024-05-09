@@ -16,7 +16,7 @@ const Header = () => {
                     disableOnInteraction: false,
                 }}
                 slidesPerView={1}
-                speed={1600}
+                speed={1500}
                 loop={true}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
