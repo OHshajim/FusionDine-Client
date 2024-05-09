@@ -1,6 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
+    const [isOpen, setMenu] = useState(false)
+    const [fix, setFix] = useState(false)
     const links = <>
         <NavLink to="/"
             className={({ isActive, isPending }) =>
@@ -21,7 +23,7 @@ const Navbar = () => {
         ><li>Gallery</li></NavLink>
 
     </>
-    const [fix, setFix] = useState(false)
+
     function setFixed() {
         if (window.scrollY > 50) {
             setFix(true)
@@ -33,7 +35,7 @@ const Navbar = () => {
     window.addEventListener("scroll", setFixed)
     return (
         <div>
-            <div className={fix ? "navbar fixed z-10  duration-500 bg-slate-800 text-white" : "text-white navbar bg-[#3b3b3b7c] duration-300 fixed z-10"}>
+            <div className={fix ? "navbar fixed z-10  duration-500 bg-slate-800 text-white" : "text-white navbar bg-[#5353532d] duration-300 fixed z-10"}>
                 <div className="navbar-start">
                     <div className="dropdown ">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,15 +59,22 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {/* { */}
                     {/* // user ? */}
-                    <div className="avatar ">
-                        <div className="w-11 rounded-full ring ring-cyan-500  clickable" id="clickable" >
+                    <div className=" text-3xl px-2 avatar" onClick={() => setMenu(!isOpen)}>
+                        <div className="w-11 rounded-full ring"  >
                             <img src='' />
                         </div>
+                        <ul className={` gap-5 absolute  w-52 duration-500  p-5 
+                        menu menu-sm dropdown-content bg-black  shadow  rounded-box
+                                    ${isOpen ? 'top-14 right-0' : '-top-60 right-0'}`}>
+                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></ll>
+                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></ll>
+                            <ll className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></ll>
+                        </ul>
                     </div>
                     {/* // : */}
-                    <div className="flex gap-2">
+                    {/* <div className="flex gap-2">
                         <Link to="/login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
-                    </div>
+                    </div> */}
                     {/* } */}
 
                 </div>
