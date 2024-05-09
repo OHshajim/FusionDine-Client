@@ -1,0 +1,29 @@
+.slide1 {
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.150) 100%),
+        url("https://i.ibb.co/HDWPNrY/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-p.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.slide2 {
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.450), rgba(0, 0, 0, 0.300) 100%),
+        url("https://i.ibb.co/q7220QK/bali-pagoda-indonesia.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.slide3 {
+    background-image: linear-gradient(180.00deg, rgba(0, 0, 0, 0.639), rgba(0, 0, 0, 0.100) 100%),
+        url("https://i.ibb.co/c39C3tC/kuala-lumpur-1820944.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
