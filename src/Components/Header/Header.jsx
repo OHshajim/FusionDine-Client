@@ -5,6 +5,7 @@ import "./Header.css"
 import { Pagination, Scrollbar, Autoplay } from 'swiper/modules';
 // import { Typewriter } from 'react-simple-typewriter';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className='h-screen text-[#d3d1d1]'>
@@ -23,10 +24,28 @@ const Header = () => {
 
                 <SwiperSlide>
                     <div className=' h-screen slide1'>
-                        <div className='max-w-[1600px] mx-auto  flex flex-col justify-center px-5 sm:px-20 h-screen '>
-                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Crafting Memorable Getaways: <br />
-                            </h2>
-                            <h1 className='text-3xl lg:text-5xl font-bold my-5'>SAFAR</h1>
+                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
+                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Elevate Your Dining Experience</h2>
+                            <p className='text-sm'>Elevate your senses with our exquisite cuisine, where every meal is a celebration of flavor, innovation, and excellence.</p>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=' h-screen slide2'>
+                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
+                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Elevate Your Dining Experience</h2>
+                            <p className='text-sm'>Elevate your senses with our exquisite cuisine, where every meal is a celebration of flavor, innovation, and excellence.</p>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=' h-screen slide3'>
+                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
+                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Elevate Your Dining Experience</h2>
+                            <p className='text-sm'>Elevate your senses with our exquisite cuisine, where every meal is a celebration of flavor, innovation, and excellence.</p>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
                         </div>
                     </div>
                 </SwiperSlide>
