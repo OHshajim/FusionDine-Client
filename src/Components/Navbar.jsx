@@ -86,14 +86,8 @@ const Navbar = () => {
                                 <Link to="login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
                             </div>
                     }
-
-
                 </div>
-
-
             </div>
-
-
         </div>
     );
 };
