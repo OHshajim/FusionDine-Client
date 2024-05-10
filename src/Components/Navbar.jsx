@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
     const [isOpen, setMenu] = useState(false)
     const [fix, setFix] = useState(false)
+    const { user ,Logout} = useContext(AuthContext)
     const links = <>
         <NavLink to="/"
             className={({ isActive, isPending }) =>
@@ -21,8 +23,11 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
         ><li>Gallery</li></NavLink>
-
     </>
+
+    const handleLogout = () => {
+        Logout()
+    }
 
     function setFixed() {
         if (window.scrollY > 50) {
@@ -57,25 +62,31 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {/* { */}
-                    {/* // user ? */}
-                    <div className=" text-3xl px-2 avatar" onClick={() => setMenu(!isOpen)}>
-                        <div className="w-11 rounded-full ring"  >
-                            <img src='' />
-                        </div>
-                        <ul className={` absolute  w-52 duration-500  p-2 
+                    {
+                        user ?
+                            <div className="flex px-2 gap-4">
+                                <div className="  avatar" onClick={() => setMenu(!isOpen)}>
+                                    <div className="w-11 rounded-full ring"  >
+                                        <img src={user.photoURL} />
+                                    </div>
+                                    <ul className={` absolute  w-52 duration-500  p-2 
                         menu menu-sm dropdown-content bg-black  shadow  rounded-box
                                     ${isOpen ? 'top-14 right-0' : '-top-72 right-0'}`}>
-                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
-                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
-                            <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></li>
-                        </ul>
-                    </div>
-                    {/* // : */}
-                    {/* <div className="flex gap-2">
-                        <Link to="/login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
-                    </div> */}
-                    {/* } */}
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></li>
+                                    </ul>
+                                </div>
+                                <div className="flex gap-2">
+                                    <button onClick={handleLogout} className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Logout</button>
+                                </div>
+                            </div>
+                            :
+                            <div className="flex gap-2">
+                                <Link to="login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
+                            </div>
+                    }
+
 
                 </div>
 
