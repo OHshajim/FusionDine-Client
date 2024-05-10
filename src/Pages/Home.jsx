@@ -1,4 +1,5 @@
 import Header from "../Components/Header/Header";
+import OurStrength from "../Components/OurStrength";
 import TopFoods from "../Components/TopFoods";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             <Header />
             <TopFoods />
+            <OurStrength/>
         </div>
     );
 };
