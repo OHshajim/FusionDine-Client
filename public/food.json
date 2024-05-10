@@ -1,0 +1,80 @@
+[
+    {
+        "food_name": "Grilled Steak",
+        "food_image": "https://i.ibb.co/dgnmjZR/Grilled-Steak.jpg",
+        "food_category": "Main Course",
+        "quantity": "1 serving",
+        "price": "$24.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "United States",
+        "description": "Tender USDA prime beef steak marinated in a secret blend of spices, grilled to perfection, and served with a side of garlic mashed potatoes and sautéed vegetables."
+    },
+    {
+        "food_name": "Shrimp Scampi Pasta",
+        "food_image": "https://i.ibb.co/Bn6jYZZ/Shrimp-Scampi-Pasta.jpg",
+        "food_category": "Seafood",
+        "quantity": "1 plate",
+        "price": "$18.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "Italy",
+        "description": "Jumbo shrimp sautéed in garlic butter, white wine, and lemon sauce, tossed with al dente linguine pasta, and garnished with fresh parsley and grated Parmesan cheese."
+    },
+    {
+        "food_name": "Chicken Parmesan",
+        "food_image": "https://i.ibb.co/D1R6mN3/Chicken-Parmesan.jpg",
+        "food_category": "Italian",
+        "quantity": "1 serving",
+        "price": "$16.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "Italy",
+        "description": "Tender breaded chicken breast smothered in marinara sauce and melted mozzarella cheese, served over a bed of spaghetti pasta with a side of garlic bread."
+    },
+    {
+        "food_name": "Vegetable Pad Thai",
+        "food_image": "https://i.ibb.co/p0xf03F/Vegetable-Pad-Thai.jpg",
+        "food_category": "Asian",
+        "quantity": "1 serving",
+        "price": "$14.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "Thailand",
+        "description": "Stir-fried rice noodles with fresh vegetables, tofu, bean sprouts, and peanuts in a tangy tamarind sauce, garnished with lime wedges and cilantro."
+    },
+    {
+        "food_name": "Margherita Pizza",
+        "food_image": "https://i.ibb.co/hmKjTZ3/arugula-pizza-with-cheese.jpg",
+        "food_category": "Pizza",
+        "quantity": "1 pizza (12-inch)",
+        "price": "$12.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "Italy",
+        "description": "Thin-crust pizza topped with fresh tomatoes, mozzarella cheese, basil leaves, and a drizzle of olive oil, baked to perfection in a wood-fired oven."
+    },
+    {
+        "food_name": "Chocolate Lava Cake",
+        "food_image": "https://i.ibb.co/J3ZC4bV/chocolate-cake-concept.jpg",
+        "food_category": "Dessert",
+        "quantity": "1 serving",
+        "price": "$8.99",
+        "add_by": {
+            "name": "Owner",
+            "email": ""
+        },
+        "food_origin": "Various",
+        "description": "Decadent chocolate cake with a gooey molten chocolate center, served warm with a scoop of vanilla ice cream and drizzled with chocolate sauce."
+    }
+]

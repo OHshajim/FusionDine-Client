@@ -9,8 +9,7 @@ const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState({})
   const [loading, setLoad] = useState(true)
-
-  console.log(user);
+  const URL = 'http://localhost:5000'
   // create user 
   const createUser = (email, password) => {
     setLoad(true)
@@ -47,7 +46,7 @@ const AuthProvider = ({ children }) => {
     return () => currentUser();
   }, [])
 
-  const info = { user, createUser, Login, Logout, loginWithGoogle, loading, updateUserProfile }
+  const info = { user, createUser, Login, Logout, loginWithGoogle, loading, updateUserProfile, URL }
   return (
     <AuthContext.Provider value={info}>
       {children}

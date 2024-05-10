@@ -1,10 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 const Navbar = () => {
     const [isOpen, setMenu] = useState(false)
     const [fix, setFix] = useState(false)
-    const { user ,Logout} = useContext(AuthContext)
+    const { user, Logout } = useContext(AuthContext)
     const links = <>
         <NavLink to="/"
             className={({ isActive, isPending }) =>
@@ -25,8 +26,15 @@ const Navbar = () => {
         ><li>Gallery</li></NavLink>
     </>
 
-    const handleLogout = () => {
-        Logout()
+    const handleLogout = async () => {
+        try {
+            await Logout()
+            toast.success('Successfully logged out! 👋')
+        }
+        catch (error) {
+            console.log(error);
+            toast.error(error?.message)
+        }
     }
 
     function setFixed() {
@@ -52,7 +60,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl px-0 sm:px-5">Name</a>
+                    <a className="btn btn-ghost text-xl px-0 sm:px-5">FusionDine</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -1,9 +1,11 @@
 import Header from "../Components/Header/Header";
+import TopFoods from "../Components/TopFoods";
 
 const Home = () => {
     return (
         <div>
-            <Header/>
+            <Header />
+            <TopFoods />
         </div>
     );
 };
