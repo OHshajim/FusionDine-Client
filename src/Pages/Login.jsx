@@ -1,9 +1,10 @@
 import { useContext } from "react"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 // import loginImg from "../assets/images/login.jpg"
 // import logo from "../assets/images/logo.png"
 // import toast from 'react-hot-toast';
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const navigate = useNavigate()
@@ -21,27 +22,27 @@ const Login = () => {
         try {
             const result = await Login(email, password)
             console.log(result);
-            // toast.success('Successfully logged in ')
+            toast.success(' Successfully logged in ')
             navigate('/')
         }
         catch (err) {
             console.log(err);
-            // toast.error(err?.message)
+            toast.error(err?.message)
         }
     }
     // google Login 
     const handleLoginWithGoogle = async () => {
         try {
             await loginWithGoogle()
-            // toast.success('Successfully logged in ')
+            toast.success(' Successfully logged in 🌟')
             navigate('/')
         }
         catch (error) {
             console.log(error);
-            // toast.error(error?.message)
+            toast.error(error?.message)
         }
     }
-    
+
 
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] py-20 '>
@@ -111,6 +112,7 @@ const Login = () => {
                                 Email Address
                             </label>
                             <input
+                                required
                                 id='LoggingEmailAddress'
                                 autoComplete='email'
                                 name='email'
@@ -131,6 +133,7 @@ const Login = () => {
                             </div>
 
                             <input
+                                required
                                 id='loggingPassword'
                                 autoComplete='current-password'
                                 name='password'
@@ -144,7 +147,7 @@ const Login = () => {
                                 type='submit'
                                 className='w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
                             >
-                                Sign In
+                                Login
                             </button>
                         </div>
                     </form>
@@ -153,10 +156,10 @@ const Login = () => {
                         <span className='w-1/5 border-b  md:w-1/4'></span>
 
                         <Link
-                            to='/signUp'
+                            to='/registration'
                             className='text-xs text-gray-500 uppercase  hover:underline'
                         >
-                            or sign up
+                            or Registration
                         </Link>
 
                         <span className='w-1/5 border-b  md:w-1/4'></span>
