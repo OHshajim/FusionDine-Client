@@ -27,6 +27,7 @@ const OurChefs = () => {
                     autoplay={{
                         delay: 4000,
                         disableOnInteraction: false,
+                        reverseDirection: true,
                     }}
                     speed={2000}
                     navigation={true}

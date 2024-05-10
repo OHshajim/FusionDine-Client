@@ -13,13 +13,13 @@ const Navbar = () => {
             }
         ><li>Home</li></NavLink>
 
-        <NavLink to="/allSpots"
+        <NavLink to="/allFoods"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
         ><li>All Foods</li></NavLink>
 
-        <NavLink to="/addSpots"
+        <NavLink to="/gallery"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
             }
@@ -60,7 +60,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl px-0 sm:px-5">FusionDine</a>
+                    <a className="font-semibold text-xl px-0 sm:px-5">FusionDine</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -72,14 +72,14 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <div className="flex px-2 gap-4">
+                            <div className="flex sm:px-2 gap-2 sm:gap-4">
                                 <div className="  avatar" onClick={() => setMenu(!isOpen)}>
                                     <div className="w-11 rounded-full ring"  >
                                         <img src={user.photoURL} />
                                     </div>
                                     <ul className={` absolute  w-52 duration-500  p-2 
                         menu menu-sm dropdown-content bg-black  shadow  rounded-box
-                                    ${isOpen ? 'top-14 right-0' : '-top-72 right-0'}`}>
+                                    ${isOpen ? 'top-14 -left-20' : 'left-96 top-14 '}`}>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></li>
