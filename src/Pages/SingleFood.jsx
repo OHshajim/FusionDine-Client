@@ -1,6 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SingleFood = () => {
+    const { user } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
     const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by
@@ -8,7 +11,10 @@ const SingleFood = () => {
     const { name, email } = add_by;
     return (
         <div className="py-20 max-w-[1600px] mx-auto px-5">
-            <h1 className="text-3xl font-semibold my-5">Single Food Details :</h1>
+            <div className="flex flex-col justify-center items-center mb-10">
+                <h2 className="text-4xl mb-4">Food Details </h2>
+                <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
+            </div>
             <div className="flex card lg:card-side  shadow-2xl w-full">
                 <img src={food_image} alt={food_name} className=" lg:w-1/2" />
                 <div className="card-body lg:w-1/2">
@@ -27,7 +33,7 @@ const SingleFood = () => {
                         <p>Quantity : {quantity}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="btn w-full btn-outline">Purchase</button>
+                        <Link to={user ? "/foodPurchase" : "/login"}><button className="btn w-full btn-outline">Purchase</button></Link>
                     </div>
                 </div>
             </div>
