@@ -77,8 +77,8 @@ const Navbar = () => {
                                     <div className="w-11 rounded-full ring"  >
                                         <img src={user.photoURL} />
                                     </div>
-                                    <ul className={` absolute  w-52 duration-500  p-2 
-                        menu menu-sm dropdown-content bg-black  shadow  rounded-box
+                                    <ul
+                                        className={` absolute  w-52 duration-500  p-2 menu menu-sm dropdown-content bg-black  shadow  rounded-box
                                     ${isOpen ? 'top-14 -left-20' : 'left-96 top-14 '}`}>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
@@ -91,7 +91,9 @@ const Navbar = () => {
                             </div>
                             :
                             <div className="flex gap-2">
-                                <Link to="login"><button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button></Link>
+                                <Link to="/login">
+                                    <button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button>
+                                </Link>
                             </div>
                     }
                 </div>
