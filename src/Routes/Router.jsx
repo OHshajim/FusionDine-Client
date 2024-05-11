@@ -8,6 +8,7 @@ import AllFoods from "../Pages/AllFoods";
 import SingleFood from "../Pages/SingleFood";
 import FoodPurchase from "../Pages/FoodPurchase";
 import Gallery from "../Pages/Gallery";
+import AddFood from "../Pages/AddFood";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -25,6 +26,10 @@ const Router = createBrowserRouter([
             {
                 path: "/gallery",
                 element: <Gallery />,
+            },
+            {
+                path: "/addFood",
+                element: <AddFood />,
             },
             {
                 path: "/singleFood/:id",

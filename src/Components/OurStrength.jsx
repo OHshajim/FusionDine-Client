@@ -51,7 +51,7 @@ const OurStrength = () => {
                                 <img src="https://i.ibb.co/P48trFN/cake-6067620.png" alt="Birthday logo" className="w-24 mb-5" />
                                 <h2
                                     className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold group-hover:text-orange-500  duration-500'>Birthday</h2>
-                                <p className='text-sm text-center'>Birthdays shine brighter at <span className="font-bold group-hover:text-orange-500">FusionDine</span>! Let's make yours unforgettable with delicious food and cozy vibes.</p>
+                                <p className='text-sm text-center'>Birthdays shine brighter at <span className="font-bold group-hover:text-orange-500">FusionDine</span>! Let us make yours unforgettable with delicious food and cozy vibes.</p>
                             </div>
                         </div>
                     </SwiperSlide>

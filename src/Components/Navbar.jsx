@@ -80,9 +80,12 @@ const Navbar = () => {
                                     <ul
                                         className={` absolute  w-52 duration-500  p-2 menu menu-sm dropdown-content bg-black  shadow  rounded-box
                                     ${isOpen ? 'top-14 -left-20' : 'left-96 top-14 '}`}>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link to='/'>My added food items</Link></li>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>Add a food item</Link></li>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl"><Link>My ordered food items</Link></li>
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                            <Link to='/'>My added food items</Link></li>
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                            <Link to="/addFood">Add a food item</Link></li>
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                            <Link>My ordered food items</Link></li>
                                     </ul>
                                 </div>
                                 <div className="flex gap-2">
