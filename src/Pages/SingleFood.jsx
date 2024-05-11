@@ -6,7 +6,7 @@ const SingleFood = () => {
     const { user } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
-    const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by
+    const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by, _id
     } = foodData
     const { name, email } = add_by;
     return (
@@ -33,7 +33,7 @@ const SingleFood = () => {
                         <p>Quantity : {quantity}</p>
                     </div>
                     <div className="card-actions justify-end">
-                        <Link to={user ? "/foodPurchase" : "/login"}><button className="btn w-full btn-outline">Purchase</button></Link>
+                        <Link to={user ? `/foodPurchase/${_id}` : "/login"}><button className="btn w-full btn-outline">Purchase</button></Link>
                     </div>
                 </div>
             </div>
