@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-    const { food_name, food_image, food_category, price } = food;
+    const { food_name, food_image, food_category, price, _id } = food;
     return (
         <div>
             <div className="w-full  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -16,11 +17,11 @@ const FoodCart = ({ food }) => {
                         </div>
                     </div>
                     <div className="card-actions w-full">
-                        <button className="btn btn-outline w-full">View Details</button>
-                    </div>
+                        <Link to={`/singleFood/${_id}`}><button className="btn btn-outline w-full">View Details</button></Link>
                 </div>
             </div>
         </div>
+        </div >
     );
 };
 

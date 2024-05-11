@@ -5,7 +5,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
 import AllFoods from "../Pages/AllFoods";
-
+import SingleFood from "../Pages/SingleFood";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -18,15 +18,20 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/allFoods",
-                element: <AllFoods/>,
+                element: <AllFoods />,
+            },
+            {
+                path: "/singleFood/:id",
+                element: <SingleFood />,
+                loader: ({ params }) => fetch(`http://localhost:5000/singleFood/${params.id}`)
             },
             {
                 path: "/login",
-                element:<Login/>,
+                element: <Login />,
             },
             {
                 path: "/registration",
-                element: <Registration/>,
+                element: <Registration />,
             },
         ]
     },
