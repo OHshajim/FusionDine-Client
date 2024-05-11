@@ -3,19 +3,41 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from "axios";
+import toast from "react-hot-toast";
 const FoodPurchase = () => {
     const [startDate, setStartDate] = useState(new Date());
-    const { user } = useContext(AuthContext)
+    const { user, URL } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
     const { food_name, price } = foodData
-   
+    const handlePurchase = async (e) => {
+        e.preventDefault()
+        const form = e.target;
+        const food_name = form.foodName.value;
+        const price = form.price.value;
+        const quantity = form.quantity.value;
+        const buyerName = form.buyerName.value;
+        const buyerEmail = form.buyerEmail.value;
+        const buyingDate = form.buyingDate.value;
+        const PurchasedFood = { food_name, price, quantity, buyerEmail, buyerName, buyingDate }
+        console.log(PurchasedFood);
+
+        try {
+            const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
+            console.log(data);
+            toast.success('This food is  Successfully purchased  🌟')
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
     return (
         <div className="py-20">
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
                 <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Account settings</h2>
 
-                <form>
+                <form onSubmit={handlePurchase}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
                             <label className="text-gray-700 dark:text-gray-200" >Food Name</label>
