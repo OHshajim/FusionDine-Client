@@ -66,7 +66,7 @@ const Gallery = () => {
             {
                 loading && <div className="flex justify-center"><div className="loader" /></div>
             }
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8  max-w-[1600px] mx-auto px-5 mb-20 my-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8  max-w-[1600px] mx-auto px-5  py-20">
                 {
                     foodReviews.map(review => <Review key={review._id} review={review} />)
                 }

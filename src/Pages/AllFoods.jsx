@@ -65,7 +65,7 @@ const AllFoods = () => {
                 <form onSubmit={handleSearch}>
                     <div className="join w-full">
                         <input type="text" placeholder="Search your Favorite Food " className="input w-full input-bordered join-item rounded-full sm:px-6" name="search" />
-                        <button className="btn rounded-full sm:px-8 join-item">Search</button>
+                        <button className="btn rounded-full sm:px-8 join-item text-orange-400 border-orange-400">Search</button>
                     </div>
                 </form>
             </div>

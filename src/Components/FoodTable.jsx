@@ -39,7 +39,7 @@ const FoodTable = ({ food, updateFood, handleDelete, id }) => {
                 <td >
                     <div className="flex  gap-5">
                         {/* update */}
-                        <button onClick={() => document.getElementById('my_modal_5' + id).showModal()} className="btn hover:border-green-400 hover:bg-black hover:text-green-400 btn-outline font-semibold"><MdUpdate className="text-2xl hidden sm:flex" />Update </button>
+                        <button onClick={() => document.getElementById('my_modal_5' + id).showModal()} className="btn hover:border-green-400 hover:bg-black hover:text-green-400 btn-outline font-semibold "><MdUpdate className="text-2xl hidden sm:flex" />Update </button>
 
                         {/* delete */}
                         <div className='flex items-center gap-x-6'>
@@ -106,7 +106,7 @@ const FoodTable = ({ food, updateFood, handleDelete, id }) => {
                                 <label className="text-lg mb-1 font-semi-bold">Short description</label>
                                 <input className=" input bg-[#9f9f9f42] " defaultValue={description} placeholder="short description" name="description" type="text" />
                             </div>
-                            <button className="btn my-3 w-full btn-outline">Update</button>
+                            <button className="btn my-3 w-full btn-outline text-orange-400 border-orange-400">Update</button>
                         </form>
                     </div>
                 </div>

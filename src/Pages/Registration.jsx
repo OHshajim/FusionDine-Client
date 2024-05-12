@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/Firebase.config";
 
 const Registration = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const { createUser, updateUserProfile, user, setUser } = useContext(AuthContext)
+  const { createUser } = useContext(AuthContext)
 
   // email and password register
   const handleRegister = async e => {
@@ -18,22 +20,31 @@ const Registration = () => {
     const email = form.email.value
     const password = form.password.value
 
-    try {
-      const result = await createUser(email, password)
-      console.log(result);
-      await updateUserProfile(name, photo)
-      setUser({ ...user, photoURL: photo, displayName: name })
-      toast.success('🎉 Registration Successful 🎉')
-      navigate(location?.state ? location.state : "/")
-    }
-    catch (err) {
-      console.log(err);
-      toast.error(err?.message)
-    }
-  }
+    createUser(email, password)
+      .then(result => {
+        console.log(result);
+        updateProfile(auth.currentUser, {
+          displayName: `${name}`, photoURL: `${photo}`
+        })
+          .then(() => {
+            console.log(auth.currentUser)
+            // setUser( {...user, photoURL: photo, displayName: name })
+            toast.success('🎉 Registration Successful 🎉')
+            navigate(location?.state ? location.state : "/")
+          })
+          .catch(error => {
+            console.log(error);
+            toast.error(error?.message)
+          })
+      })
+      .catch(error => {
 
+        console.log(error);
+        toast.error(error?.message)
+      })
+  }
   return (
-    <div className='flex justify-center items-center  py-20'   data-aos="fade-down" data-aos-duration="1000">
+    <div className='flex justify-center items-center  py-20' data-aos="fade-down" data-aos-duration="1000">
       {/* title */}
       <Helmet>
         <title>FusionDine || Registration</title>
@@ -125,7 +136,7 @@ const Registration = () => {
             <div className='mt-6'>
               <button
                 type='submit'
-                className='w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
+                className='w-full px-6 py-3 text-sm font-medium tracking-wide text-orange-400 border-orange-400 capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
               >
                 Registration
               </button>

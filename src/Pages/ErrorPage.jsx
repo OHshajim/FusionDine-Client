@@ -16,7 +16,7 @@ const ErrorPage = () => {
             {/* <p className="text-red-600 font-bold mt-5">{error.error.message}</p> */}
             {
                 error.status === 404 && <div className=" flex flex-col items-center ">
-                    <Link to={'/'}><button className="btn bg-[#25177790] my-2 text-white font-bold text-lg hover:bg-black"><IoMdArrowRoundBack />Back to Home</button></Link>
+                    <Link to={'/'}><button className="btn bg-[#25177790] my-2 font-bold text-lg hover:bg-black text-orange-400 border-orange-400"><IoMdArrowRoundBack />Back to Home</button></Link>
                 </div >
             }
         </div >

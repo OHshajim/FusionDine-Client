@@ -9,19 +9,19 @@ const Navbar = () => {
     const links = <>
         <NavLink to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg text-orange-400 border-orange-400" : " px-5 py-2 rounded-lg"
             }
         ><li>Home</li></NavLink>
 
         <NavLink to="/allFoods"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg text-orange-400 border-orange-400" : " px-5 py-2 rounded-lg"
             }
         ><li>All Foods</li></NavLink>
 
         <NavLink to="/gallery"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg" : " px-5 py-2 rounded-lg"
+                isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg text-orange-400 border-orange-400 " : " px-5 py-2 rounded-lg"
             }
         ><li>Gallery</li></NavLink>
     </>
@@ -60,7 +60,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="font-semibold text-xl px-0 sm:px-5 font-cookie ">FusionDine</a>
+                    <a className="font-semibold text-xl px-0 sm:px-5 font-cookie text-orange-400">FusionDine</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -74,28 +74,28 @@ const Navbar = () => {
                         user ?
                             <div className="flex sm:px-2 gap-2 sm:gap-4">
                                 <div className="  avatar" onClick={() => setMenu(!isOpen)}>
-                                    <div className="w-11 rounded-full ring"  >
+                                    <div className="w-11 rounded-full ring ring-orange-400"  >
                                         <img src={user.photoURL} />
                                     </div>
                                     <ul
-                                        className={` absolute  w-52 duration-500  p-2 menu menu-sm dropdown-content bg-black  shadow  rounded-box
+                                        className={` absolute  w-56 duration-500  p-2 menu menu-sm dropdown-content bg-black  shadow  rounded-box
                                     ${isOpen ? 'top-14 -left-20' : 'left-96 top-14 '}`}>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl  border-orange-400 hover:text-orange-400">
                                             <Link to='/myAddedFoods'>My added food items</Link></li>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl border-orange-400 hover:text-orange-400">
                                             <Link to="/addFood">Add a food item</Link></li>
-                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
+                                        <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl border-orange-400 hover:text-orange-400">
                                             <Link to='/myPurchaseFoods'>My ordered food items</Link></li>
                                     </ul>
                                 </div>
                                 <div className="flex gap-2">
-                                    <button onClick={handleLogout} className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Logout</button>
+                                    <button onClick={handleLogout} className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-red-400 text-red-400 hover:bg-black hover:text-red-500 hover:border-red-500">Logout</button>
                                 </div>
                             </div>
                             :
                             <div className="flex gap-2">
                                 <Link to="/login">
-                                    <button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-cyan-500 text-cyan-500">Login</button>
+                                    <button className="btn px-2 sm:px-4 text-sm sm:text-base btn-outline border-orange-400 text-orange-400">Login</button>
                                 </Link>
                             </div>
                     }

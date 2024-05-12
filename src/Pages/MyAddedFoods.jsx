@@ -13,7 +13,7 @@ const MyAddedFoods = () => {
     const [loading, SetLoad] = useState(true)
     const loadData = async () => {
         try {
-            const { data } = await axios(`${URL}/myFoods/${user.email}`)
+            const { data } = await axios(`${URL}/myFoods/${user.email}`, { withCredentials: true })
             setFood(data)
             SetLoad(false)
         }

@@ -2,11 +2,11 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div data-aos-duration="1000" data-aos="fade-up">
+        <div >
             <div className="bg-[url('https://i.ibb.co/cX2HvTb/bg-3.jpg')] " >
                 <footer className="footer flex lg:flex-row  flex-col justify-between mx-auto max-w-[1600px] items-start md:items-center p-5 md:py-20  text-neutral-content place-items-center">
                     <aside>
-                        <h2 className="text-3xl font-bold font-cookie">FusionDine</h2>
+                        <h2 className="text-3xl font-bold font-cookie text-orange-400">FusionDine</h2>
                         <p>Providing reliable tech since 2006</p>
                     </aside>
                     <nav className=" ">
@@ -28,7 +28,7 @@ const Footer = () => {
 
             <footer className="footer footer-center p-5 bg-black text-base-content">
                 <aside>
-                    <p>Copyright © 2024 - All right reserved by <span className="font-bold text-sm">FusionDine</span> Industries Ltd</p>
+                    <p>Copyright © 2024 - All right reserved by <span className="font-bold text-sm text-orange-400">FusionDine</span> Industries Ltd</p>
                 </aside>
             </footer>
         </div>

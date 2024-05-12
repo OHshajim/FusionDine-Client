@@ -5,7 +5,7 @@ const FoodCart = ({ food }) => {
     return (
         
             <div className="w-full  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800"  data-aos="fade-up" data-aos-duration="1000">
-                <img className="object-cover w-full" src={food_image} alt="avatar" />
+                <img className="object-cover w-full h-80" src={food_image} alt="avatar" />
                 <div className="p-4">
                     <div className="flex items-center justify-between">
                         <div className="py-5 ">
@@ -18,7 +18,7 @@ const FoodCart = ({ food }) => {
                         </div>
                     </div>
                     <div className="card-actions w-full">
-                        <Link to={`/singleFood/${_id}`}><button className="btn btn-outline w-full">View Details</button></Link>
+                        <Link to={`/singleFood/${_id}`}><button className="btn btn-outline w-full text-orange-400 border-orange-400">View Details</button></Link>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 const OrderTable = ({ food, deleteFood }) => {
     const { _id, buyingDate, food_name, price, quantity, food_image
     } = food;
-    console.log(food);
+    // console.log(food);
     return (
         <tbody className="hover:translate-x-2 hover:-translate-y-2 hover:duration-500 hover:bg-[#4a474759]">
             <tr >

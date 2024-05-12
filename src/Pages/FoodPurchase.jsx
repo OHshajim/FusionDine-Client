@@ -10,8 +10,8 @@ const FoodPurchase = () => {
     const [startDate, setStartDate] = useState(new Date());
     const { user, URL } = useContext(AuthContext)
     const foodData = useLoaderData()
-    console.log(foodData);
-    const { food_name, price, food_image, add_by, quantity } = foodData;
+    // console.log(foodData);
+    const { food_name, price, food_image, add_by, quantity, _id } = foodData;
     const quantityNumber = quantity;
     const handlePurchase = async (e) => {
         e.preventDefault()
@@ -27,12 +27,10 @@ const FoodPurchase = () => {
         if (add_by.email === user.email) {
             return toast.error('You can not purchase your own item');
         }
-        if (quantity <= 0) {
-            return toast.error('this item is not available !!!');
-        }
         if (quantity > quantityNumber) {
             return toast.error('This Number of quantity is not available !!!');
         }
+        // const availableQuantity = quantityNumber - quantity ;
         try {
             const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
             console.log(data);
@@ -51,7 +49,7 @@ const FoodPurchase = () => {
             </Helmet>
 
             {/* Components */}
-            <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800"   data-aos="fade-up" data-aos-duration="1000">
+            <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800" data-aos="fade-up" data-aos-duration="1000">
                 <h2 className=" text-2xl sm:text-4xl font-semibold text-center font-rufina mb-5 animate__animated animate__backInRight">Purchase Food</h2>
 
                 <form onSubmit={handlePurchase}>
@@ -76,6 +74,7 @@ const FoodPurchase = () => {
                                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                                 name="quantity"
                                 defaultValue={1}
+                                min={1}
                             />
                         </div>
 
@@ -102,7 +101,7 @@ const FoodPurchase = () => {
                     </div>
 
                     <div className="flex justify-end mt-6">
-                        <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Purchase</button>
+                        <button className=" btn-outline btn   duration-300  text-orange-400 border-orange-400">Purchase</button>
                     </div>
                 </form>
             </section>

@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext(null)
 
@@ -26,27 +27,39 @@ const AuthProvider = ({ children }) => {
     setLoad(true);
     return signInWithPopup(auth, provider);
   }
-  //update UserProfile 
-  const updateUserProfile = (name, photo) => {
-    updateProfile(auth.currentUser, {
-      displayName: name,
-      photoURL: photo
-    })
-  }
+  
   // Logout
   const Logout = () => {
     setLoad(true)
     signOut(auth)
   }
   useEffect(() => {
-    const currentUser = onAuthStateChanged(auth, (user) => {
-      setUser(user)
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser)
+      const UserEmail = currentUser?.email || user?.email;
       setLoad(false);
+      const loggedUser = { email: UserEmail }
+      // console.log(loggedUser);
+      // token
+      if (currentUser) {
+        axios.post(`${URL}/jwt`, loggedUser, { withCredentials: true })
+          .then(res => {
+
+            console.log("token :", res.data);
+          })
+
+      }
+      else {
+        axios.post(`${URL}/logout`, loggedUser, { withCredentials: true })
+          .then(res => {
+            console.log("token :", res.data);
+          })
+      }
     })
-    return () => currentUser();
+    return () => unSubscribe();
   }, [])
 
-  const info = { user, createUser, Login, Logout, loginWithGoogle, loading, updateUserProfile, URL }
+  const info = { user, createUser, Login, Logout, loginWithGoogle, loading, URL }
   return (
     <AuthContext.Provider value={info}>
       {children}
