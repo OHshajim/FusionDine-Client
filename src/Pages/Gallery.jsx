@@ -6,38 +6,39 @@ import { GrAdd } from "react-icons/gr";
 import { Helmet } from "react-helmet-async";
 
 const Gallery = () => {
-    const { URL } = useContext(AuthContext)
+    const { URL, user } = useContext(AuthContext)
     const [foodReviews, setFoodReviews] = useState([])
-    useEffect(() => {
-        const loadData = async () => {
-            try {
-                const { data } = await axios(`${URL}/foodReviews`)
-                console.log(data);
-                setFoodReviews(data)
-            }
-            catch (error) {
-                console.error(error);
-            }
+    const loadData = async () => {
+        try {
+            const { data } = await axios(`${URL}/foodReviews`)
+            console.log(data);
+            setFoodReviews(data)
         }
+        catch (error) {
+            console.error(error);
+        }
+    }
+    const handleAddGallery = async (e) => {
+        const form = e.target;
+        const user_name = form.name.value;
+        const feedback = form.feedback.value;
+        const image_url = form.photo.value;
+        const review = { user_name, feedback, image_url }
+        console.log(review);
+        try {
+            const { data } = await axios.post(`${URL}/foodReviews`, review)
+            console.log(data);
+            loadData()
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
         loadData()
     }, [])
 
-    // const handleAddGallery = async (e) => {
-    //     e.preventDefault();
-    //     // const form = e.target;
-    //     // const user_name = form.name.value;
-    //     // const feedback = form.feedback.value;
-    //     // const image_url = form.photo.value;
-    //     // const review = { user_name, feedback, image_url }
-    //     // try {
-    //     //     const { data } = await axios.post(`${URL}/foodReviews`, review)
-    //     //     console.log(data);
-    //     //     // setFoodReviews(...foodReviews, review)
-    //     // }
-    //     // catch (error) {
-    //     //     console.error(error);
-    //     // }
-    // }
     return (
         <div>
             {/* title */}
@@ -59,15 +60,15 @@ const Gallery = () => {
                     foodReviews.map(review => <Review key={review._id} review={review} />)
                 }
             </div>
-            <button onClick={() => document.getElementById('my_modal_5').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base"><span> <GrAdd /></span> Add</button>
+            <button onClick={() => document.getElementById('my_modal_1').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base"><span> <GrAdd /></span> Add</button>
 
             {/* Model */}
-            {/* <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle ">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Add your Feedback</h3>
-                    <p className="py-4">Share your Opinions with us !</p>
-                    <div className="modal-action flex-col">
-                        <form method="dialog" onSubmit={handleAddGallery}>
+
+            <dialog id="my_modal_1" className="modal">
+                <div className="modal-box ">
+                    <h3 className="font-bold text-lg">Share Your Feedback With Us </h3>
+                    <div className="modal-action flex-col" method="dialog">
+                        <form method="dialog" onSubmit={handleAddGallery} >
                             <div>
                                 <label className="text-sm text-gray-700 dark:text-gray-200">
                                     User Name
@@ -95,7 +96,7 @@ const Gallery = () => {
                         </form>
                     </div>
                 </div>
-            </dialog> */}
+            </dialog>
         </div >
     );
 };

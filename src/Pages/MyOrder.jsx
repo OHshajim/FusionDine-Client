@@ -2,9 +2,9 @@ import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 // import toast from 'react-hot-toast';
 import { AuthContext } from '../Provider/AuthProvider';
-import OrderTable from '../Components/OrderTable';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
+import OrderTable from '../Components/OrderTable';
 
 const MyOrder = () => {
     const { user, URL } = useContext(AuthContext)
