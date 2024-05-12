@@ -25,6 +25,7 @@ const MyAddedFoods = () => {
         try {
             const { data } = await axios.put(`${URL}/updatedFood/${id}`, updatedFood)
             console.log(data);
+            loadData()
             toast.success('This food is  Successfully purchased  🌟')
         }
         catch (error) {
@@ -32,14 +33,19 @@ const MyAddedFoods = () => {
             toast.error('Error !!! Try again')
         }
     }
+    const handleDelete = async (id) => {
+        try {
+            const { data } = await axios.delete(`${URL}/deleteFood/${id}`)
+            console.log(data);
+            loadData()
+            toast.success(' food is  Successfully delete 🌟')
+        }
+        catch (error) {
+            console.error(error);
+            toast.error('Error !!! Try again')
+        }
+    }
     useEffect(() => {
-        //     fetch(`${URL}/myFoods/${user.email}`)
-        //         .then(res => res.json())
-        //         .then(data => {
-        //             setFood(data)
-        //             // console.log(data);
-        //             // setLoad(false)
-        //         })
         loadData()
     }, [user])
 
@@ -65,7 +71,7 @@ const MyAddedFoods = () => {
                     <table className="table">
                         <thead>
                             <tr>
-                                <th className="text-base ">Food Name</th>
+                                <th className="text-base ">Food</th>
                                 <th className="text-base ">Food Origin</th>
                                 <th className="text-base ">Quantity</th>
                                 <th className="text-base ">Price</th>
@@ -73,7 +79,7 @@ const MyAddedFoods = () => {
                             </tr>
                         </thead>
                         {
-                            foods.map(food => <FoodTable key={food._id} food={food} updateFood={updateFood} />)
+                            foods.map(food => <FoodTable key={food._id} food={food} updateFood={updateFood} handleDelete={handleDelete} />)
                         }
 
                     </table>
