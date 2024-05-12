@@ -79,7 +79,7 @@ const MyAddedFoods = () => {
                             </tr>
                         </thead>
                         {
-                            foods.map(food => <FoodTable key={food._id} food={food} updateFood={updateFood} handleDelete={handleDelete} />)
+                            foods.map(food => <FoodTable key={food._id} id={food._id} food={food} updateFood={updateFood} handleDelete={handleDelete} />)
                         }
 
                     </table>

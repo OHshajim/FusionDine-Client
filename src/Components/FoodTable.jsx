@@ -1,8 +1,7 @@
 import { MdUpdate } from "react-icons/md";
 
-const FoodTable = ({ food, updateFood, handleDelete }) => {
+const FoodTable = ({ food, updateFood, handleDelete, id }) => {
     const { _id, food_name, food_image, food_category, quantity, price, add_by, food_origin, description } = food;
-    console.log(food, _id);
 
     const handleUpdate = (event) => {
         const form = event.target;
@@ -15,7 +14,6 @@ const FoodTable = ({ food, updateFood, handleDelete }) => {
         const description = form.description.value;
         // console.log(name, email, spotName, location, country, seasonality, travel_time, visitorsPerYear, average_cost, image, description);
         const updatedFood = { food_name, food_image, food_category, quantity, price, add_by, food_origin, description };
-        console.log(updatedFood, _id);
         updateFood(updatedFood, _id)
     }
     return (
@@ -40,7 +38,10 @@ const FoodTable = ({ food, updateFood, handleDelete }) => {
                 <td className="text-sm font-semibold">{price}</td>
                 <td >
                     <div className="flex  gap-5">
-                        <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn hover:border-green-400 hover:bg-black hover:text-green-400 btn-outline font-semibold"><MdUpdate className="text-2xl hidden sm:flex" />Update </button>
+                        {/* update */}
+                        <button onClick={() => document.getElementById('my_modal_5' + id).showModal()} className="btn hover:border-green-400 hover:bg-black hover:text-green-400 btn-outline font-semibold"><MdUpdate className="text-2xl hidden sm:flex" />Update </button>
+
+                        {/* delete */}
                         <div className='flex items-center gap-x-6'>
                             <button onClick={() => handleDelete(_id)} className=' transition-colors duration-200 btn btn-outline hover:border-red-500 hover:bg-black hover:text-red-500 focus:outline-none'>
                                 <svg
@@ -63,7 +64,7 @@ const FoodTable = ({ food, updateFood, handleDelete }) => {
                 </td>
 
             </tr>
-            <dialog id="my_modal_5" className="modal">
+            <dialog id={"my_modal_5" + id} className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg text-center">Update Your Added Food Details{_id}</h3>
                     <div className="modal-action">
