@@ -10,7 +10,6 @@ const Home = () => {
             {/* Title */}
             <Helmet>
                 <title>FusionDine || Home</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
 

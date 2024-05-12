@@ -50,7 +50,6 @@ const Login = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || Login</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}

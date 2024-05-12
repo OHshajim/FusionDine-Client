@@ -43,7 +43,6 @@ const MyOrder = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || My purchased Foods</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}

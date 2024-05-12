@@ -41,7 +41,6 @@ const FoodPurchase = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || Purchase Food</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}

@@ -9,7 +9,6 @@ const ErrorPage = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || Not Found</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}

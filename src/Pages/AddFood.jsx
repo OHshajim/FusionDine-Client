@@ -40,7 +40,6 @@ const AddFood = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || Add Food</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}

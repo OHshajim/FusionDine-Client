@@ -36,7 +36,6 @@ const Registration = () => {
       {/* title */}
       <Helmet>
         <title>FusionDine || Registration</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
 
       {/* Components */}

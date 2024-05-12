@@ -44,7 +44,6 @@ const Gallery = () => {
             {/* title */}
             <Helmet>
                 <title>FusionDine || Food Gallery</title>
-                <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
             {/* Components */}
