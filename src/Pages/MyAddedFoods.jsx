@@ -63,7 +63,7 @@ const MyAddedFoods = () => {
 
             {/* Components */}
             <div className="flex flex-col justify-center items-center my-10">
-                <h2 className="text-4xl  mb-4">My Added Food Items</h2>
+                <h2 className="text-2xl sm:text-4xl font-bold  mb-4 font-rufina">My Added Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
 
@@ -94,7 +94,7 @@ const MyAddedFoods = () => {
                     {
                         !loading && <>
                             {
-                                foods.length == 0 && <h2 className="text-center text-xl sm:text-3xl w-full my-20 font-bold text-red-600 delay-1000">
+                                foods.length == 0 && <h2 className="text-center text-xl sm:text-2xl w-full my-20 font-bold text-red-600 ">
                                     You did not added any Food !!!</h2>
                             }
                         </>

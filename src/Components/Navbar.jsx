@@ -60,7 +60,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <a className="font-semibold text-xl px-0 sm:px-5">FusionDine</a>
+                    <a className="font-semibold text-xl px-0 sm:px-5 font-cookie ">FusionDine</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

@@ -51,7 +51,7 @@ const MyOrder = () => {
 
             {/* Components */}
             <div className="flex flex-col justify-center items-center my-10">
-                <h2 className="text-4xl  mb-4">My Purchased Food Items</h2>
+                <h2 className="text-2xl sm:text-4xl  mb-5 font-rufina font-bold">My Purchased Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
 
@@ -83,7 +83,7 @@ const MyOrder = () => {
                     {
                         !loading && <>
                             {
-                                foods.length == 0 && <h2 className="text-center text-xl sm:text-3xl w-full my-20 font-bold text-red-600 delay-1000">
+                                foods.length == 0 && <h2 className="text-center text-xl sm:text-2xl w-full my-20 font-bold text-red-600 ">
                                     You did not purchased any Food !!!</h2>
                             }
                         </>

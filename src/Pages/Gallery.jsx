@@ -57,8 +57,8 @@ const Gallery = () => {
             {/* Components */}
             <div className="bg-[linear-gradient(rgba(19,19,19,0.6),rgba(19,19,19,0.6)),url('https://i.ibb.co/GcgrdDY/breadcumb-bg-1-1.jpg')] bg-no-repeat bg-cover bg-center">
                 <div className="h-[40vh] flex flex-col items-center justify-center">
-                    <h1 className="text-xl lg:text-5xl font-bold text-white text-center mb-5">Our Food Gallery</h1>
-                    <h3 className="text-sm sm:text-lg  font-semibold text-white text-center mb-5">FusionDine || Gallery</h3>
+                    <h1 className="text-xl lg:text-5xl font-bold text-white text-center mb-5 font-rufina">Our Food Gallery</h1>
+                    <h3 className="text-sm sm:text-lg  font-semibold text-white text-center mb-3">FusionDine || Gallery</h3>
                     <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
                 </div>
             </div>
@@ -76,7 +76,7 @@ const Gallery = () => {
 
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box ">
-                    <h3 className="font-bold text-lg">Share Your Feedback With Us </h3>
+                    <h3 className="font-bold text-lg font-rufina">Share Your Feedback With Us </h3>
                     <div className="modal-action flex-col" method="dialog">
                         <form method="dialog" onSubmit={handleAddGallery} >
                             <div>

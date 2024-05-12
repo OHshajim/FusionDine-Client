@@ -25,7 +25,7 @@ const TopFoods = () => {
     return (
         <div className="my-20 mx-auto max-w-[1600px] px-5">
             <div className="flex flex-col justify-center items-center">
-                <h2 className="text-4xl mb-4">Our Top Foods </h2>
+                <h2 className="text-4xl mb-4 font-rufina font-bold">Our Top Foods </h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
             {

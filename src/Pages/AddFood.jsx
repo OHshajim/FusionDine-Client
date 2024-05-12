@@ -23,7 +23,7 @@ const AddFood = () => {
             name,
             email
         }
-        const food = { food_name, food_image, food_category, quantity, price, add_by, food_origin, description }
+        const food = { food_name, food_image, food_category, quantity, price, add_by, food_origin, description, purchase_number: 0 }
         console.log(food);
         try {
             const { data } = await axios.post(`${URL}/food`, food)
@@ -47,7 +47,7 @@ const AddFood = () => {
             <div className="py-20">
 
                 <div className="flex flex-col justify-center items-center my-10">
-                    <h2 className="text-4xl  mb-4">Add Food</h2>
+                    <h2 className="text-2xl font-bold sm:text-4xl font-rufina  mb-4">Add Food</h2>
                     <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
                 </div>
 

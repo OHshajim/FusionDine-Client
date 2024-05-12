@@ -25,27 +25,27 @@ const Header = () => {
                 <SwiperSlide>
                     <div className=' h-screen slide1'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
-                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Enjoy Food Enjoy Life</h2>
-                            <p className='text-sm'>Deliciousness jumping into the mouth</p>
-                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
+                            <h2 className='text-lg sm:text-2xl  font-semibold font-cookie'>Enjoy Food Enjoy Life</h2>
+                            <h1 className=' font-rufina text-2xl sm:text-3xl md:text-5xl'>Deliciousness jumping into the mouth</h1>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3'>All Foods</button></Link>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' h-screen slide2'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
-                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Good Food Good Mood</h2>
-                            <p className='text-sm'>Enjoy delicious food with family</p>
-                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
+                            <h2 className='text-lg sm:text-2xl  font-semibold font-cookie'>Good Food Good Mood</h2>
+                            <h1 className='font-rufina text-2xl sm:text-3xl md:text-5xl'>Enjoy delicious food with family</h1>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3'>All Foods</button></Link>
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' h-screen slide3'>
                         <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
-                            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold'>Stay Healthy Stay Strong</h2>
-                            <p className='text-sm'>Diet healthy fruits in every morning</p>
-                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5'>All Foods</button></Link>
+                            <h2 className='text-lg sm:text-2xl  font-semibold font-cookie'>Stay Healthy Stay Strong</h2>
+                            <h1 className='font-rufina text-2xl sm:text-3xl md:text-5xl'>Diet healthy fruits in every morning</h1>
+                            <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3'>All Foods</button></Link>
                         </div>
                     </div>
                 </SwiperSlide>

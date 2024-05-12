@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const FoodCart = ({ food }) => {
-    const { food_name, food_image, food_category, price, _id } = food;
+    const { food_name, food_image, food_category, price, _id ,purchase_number} = food;
     return (
         <div>
             <div className="w-full  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -9,11 +9,12 @@ const FoodCart = ({ food }) => {
                 <div className="p-4">
                     <div className="flex items-center justify-between">
                         <div className="py-5 ">
-                            <h3 className="block text-xl font-bold text-gray-800 dark:text-white" tabIndex="0" role="link">{food_name}</h3>
-                            <span className="text-sm text-gray-700 dark:text-gray-200">{food_category}</span>
+                            <h3 className="block text-xl font-bold  font-rufina" tabIndex="0" role="link">{food_name}</h3>
+                            <p>Purchase Number : {purchase_number}</p>
                         </div>
-                        <div>
+                        <div className="flex flex-col items-center gap-2">
                             <p className="border py-0.5 px-3 rounded-full ">{price}</p>
+                            <p className="border py-0.5 px-3 rounded-full ">{food_category}</p>
                         </div>
                     </div>
                     <div className="card-actions w-full">

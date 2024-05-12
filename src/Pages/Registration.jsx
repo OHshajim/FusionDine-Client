@@ -41,14 +41,12 @@ const Registration = () => {
       {/* Components */}
       <div className='flex w-full max-w-sm mx-auto overflow-hidden rounded-lg shadow-2xl   lg:max-w-4xl '>
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
-          <div className='flex items-center justify-between mt-4'>
-            <span className='w-1/5 border-b  lg:w-1/4'></span>
+          <div className='flex items-center justify-center mt-4'>
 
-            <div className='text-xs text-center text-gray-500 uppercase  hover:underline'>
-              Registration Now
-            </div>
+            <p className='mt-3 text-2xl text-center text-gray-400 font-rufina '>
+              Welcome back!
+            </p>
 
-            <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
           </div>
           <form onSubmit={handleRegister}>
             <div className='mt-4'>

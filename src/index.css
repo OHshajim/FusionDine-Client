@@ -3,8 +3,21 @@
 @tailwind utilities;
 
 
+/* font family */
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lato:wght@400;700;900&family=Rufina:wght@400;700&display=swap');
 
-/* HTML: <div class="loader"></div> */
+.font-rufina {
+    font-family: "Rufina", serif;
+}
+
+.font-cookie {
+        font-family: "Cookie", cursive;
+        font-style: normal;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+}
 
 /* Loader */
 .loader {

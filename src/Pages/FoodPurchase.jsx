@@ -11,7 +11,8 @@ const FoodPurchase = () => {
     const { user, URL } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
-    const { food_name, price, food_image, add_by } = foodData
+    const { food_name, price, food_image, add_by, quantity } = foodData;
+    const quantityNumber = quantity;
     const handlePurchase = async (e) => {
         e.preventDefault()
         const form = e.target;
@@ -25,6 +26,12 @@ const FoodPurchase = () => {
         // console.log(PurchasedFood);
         if (add_by.email === user.email) {
             return toast.error('You can not purchase your own item');
+        }
+        if (quantity <= 0) {
+            return toast.error('this item is not available !!!');
+        }
+        if (quantity > quantityNumber) {
+            return toast.error('This Number of quantity is not available !!!');
         }
         try {
             const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
@@ -45,13 +52,13 @@ const FoodPurchase = () => {
 
             {/* Components */}
             <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-                <h2 className="text-lg font-semibold text-gray-700 capitalize dark:text-white">Account settings</h2>
+                <h2 className=" text-2xl sm:text-4xl font-semibold text-center font-rufina mb-5">Purchase Food</h2>
 
                 <form onSubmit={handlePurchase}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
-                            <label className="text-gray-700 dark:text-gray-200" >Food Name</label>
-                            <input type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" name="foodName" defaultValue={food_name} />
+                            <label className="text-gray-700 dark:text-gray-200 " >Food Name</label>
+                            <input type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" name="foodName" value={food_name} />
                         </div>
 
                         <div>
@@ -59,7 +66,7 @@ const FoodPurchase = () => {
                             <input type="text"
                                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring"
                                 name="price"
-                                defaultValue={price} />
+                                value={price} />
                         </div>
 
                         <div>

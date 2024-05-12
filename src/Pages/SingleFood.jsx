@@ -7,7 +7,7 @@ const SingleFood = () => {
     const { user } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
-    const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by, _id
+    const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by, _id, purchase_number
     } = foodData
     const { name, email } = add_by;
     return (
@@ -27,17 +27,25 @@ const SingleFood = () => {
                 <div className="card-body lg:w-1/2">
                     <h2 className="card-title text-2xl font-bold">{food_name}</h2>
                     <p>{description}</p>
-                    <div>
-                        <p>Category : {food_category}</p>
-                        <p>Food Origin : {food_origin}</p>
+                    <div className="flex justify-between ">
+                        <div>
+                            <p>Category : {food_category}</p>
+                            <p>Food Origin : {food_origin}</p>
+                        </div>
+                        {
+                            name == 'Owner' ? <h3 className="text-red-400">Added By Owner</h3> :
+                                <div>
+                                    <p><span >Name:</span>{name}</p>
+                                    <p><span>Email :</span>{email}</p>
+                                </div>
+                        }
                     </div>
-                    <div>
-                        <p>Name : {name}</p>
-                        <p>Email : {email}</p>
-                    </div>
-                    <div>
-                        <p>Price : {price}</p>
-                        <p>Quantity : {quantity}</p>
+                    <div className="flex justify-between">
+                        <div>
+                            <p>Quantity : {quantity}</p>
+                            <p>Purchase Number : {purchase_number}</p>
+                        </div>
+                        <h4 className="text-red-400">Price : {price}</h4>
                     </div>
                     <div className="card-actions justify-end">
                         <Link to={user ? `/foodPurchase/${_id}` : "/login"}><button className="btn w-full btn-outline">Purchase</button></Link>
