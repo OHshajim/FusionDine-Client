@@ -22,6 +22,7 @@ const AllFoods = () => {
     }
 
     const handleSearch = async (e) => {
+        SetLoad(true)
         e.preventDefault();
         const form = e.target;
         const search = form.search.value;
@@ -71,15 +72,18 @@ const AllFoods = () => {
                 loading && <div className="flex justify-center"><div className="loader" /></div>
             }
             {
-                foods.length > 0 ?
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  max-w-[1600px] mx-auto px-5 mb-20">
-                        {
-                            foods.map(food => <FoodCart key={food._id} food={food} />)
-                        }
-                    </div>
-                    :
-                    <h2 className="text-center text-3xl w-full my-20 font-bold text-red-600 delay-1000">This Food does not exist !!!</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  max-w-[1600px] mx-auto px-5 mb-20">
+                    {
+                        foods.map(food => <FoodCart key={food._id} food={food} />)
+                    }
+                </div>
+            }
+            {
+                !loading && <>
+                    {
+                        foods.length == 0 && <h2 className="text-center text-3xl w-full my-20 font-bold text-red-600 delay-1000">This Food does not exist !!!</h2>
+                    }
+                </>
             }
         </div>
     );

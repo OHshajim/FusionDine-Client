@@ -10,11 +10,12 @@ import { Helmet } from "react-helmet-async";
 const MyAddedFoods = () => {
     const { user, URL } = useContext(AuthContext)
     const [foods, setFood] = useState([])
-
+    const [loading, SetLoad] = useState(true)
     const loadData = async () => {
         try {
             const { data } = await axios(`${URL}/myFoods/${user.email}`)
             setFood(data)
+            SetLoad(false)
         }
         catch (error) {
             console.error(error);
@@ -22,10 +23,12 @@ const MyAddedFoods = () => {
     }
 
     const updateFood = async (updatedFood, id) => {
+        SetLoad(true)
         try {
             const { data } = await axios.put(`${URL}/updatedFood/${id}`, updatedFood)
             console.log(data);
             loadData()
+            SetLoad(false)
             toast.success('This food is  Successfully purchased  🌟')
         }
         catch (error) {
@@ -34,10 +37,12 @@ const MyAddedFoods = () => {
         }
     }
     const handleDelete = async (id) => {
+        SetLoad(true)
         try {
             const { data } = await axios.delete(`${URL}/deleteFood/${id}`)
             console.log(data);
             loadData()
+            SetLoad(false)
             toast.success(' food is  Successfully delete 🌟')
         }
         catch (error) {
@@ -78,10 +83,22 @@ const MyAddedFoods = () => {
                             </tr>
                         </thead>
                         {
+                            loading && <div className="flex justify-center"><div className="loader" /></div>
+                        }
+
+                        {
                             foods.map(food => <FoodTable key={food._id} id={food._id} food={food} updateFood={updateFood} handleDelete={handleDelete} />)
                         }
 
                     </table>
+                    {
+                        !loading && <>
+                            {
+                                foods.length == 0 && <h2 className="text-center text-xl sm:text-3xl w-full my-20 font-bold text-red-600 delay-1000">
+                                    You did not added any Food !!!</h2>
+                            }
+                        </>
+                    }
                 </div>
             </div>
 

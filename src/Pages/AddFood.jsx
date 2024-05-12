@@ -29,6 +29,7 @@ const AddFood = () => {
             const { data } = await axios.post(`${URL}/food`, food)
             console.log(data);
             toast.success('This food is  Successfully purchased  🌟')
+            form.reset()
         }
         catch (error) {
             console.error(error);

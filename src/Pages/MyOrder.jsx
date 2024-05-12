@@ -9,11 +9,13 @@ import OrderTable from '../Components/OrderTable';
 const MyOrder = () => {
     const { user, URL } = useContext(AuthContext)
     const [foods, setFood] = useState([])
+    const [loading, SetLoad] = useState(true)
 
     const loadData = async () => {
         try {
             const { data } = await axios(`${URL}/purchaseFoods/${user.email}`)
             setFood(data)
+            SetLoad(false)
             console.log(foods);
         }
         catch (error) {
@@ -22,11 +24,13 @@ const MyOrder = () => {
     }
 
     const deleteFood = async (id) => {
+        SetLoad(true)
         console.log(id);
         try {
             const { data } = await axios.delete(`${URL}/deleteOrder/${id}`)
             console.log(data);
             loadData()
+            SetLoad(false)
             toast.success('This food is  Successfully purchased  🌟')
         }
         catch (error) {
@@ -68,11 +72,22 @@ const MyOrder = () => {
                             </tr>
                         </thead>
                         {
+                            loading && <div className="flex justify-center"><div className="loader" /></div>
+                        }
+                        {
                             foods.map(food => <OrderTable key={food._id} food={food}
                                 deleteFood={deleteFood} />)
                         }
 
                     </table>
+                    {
+                        !loading && <>
+                            {
+                                foods.length == 0 && <h2 className="text-center text-xl sm:text-3xl w-full my-20 font-bold text-red-600 delay-1000">
+                                    You did not purchased any Food !!!</h2>
+                            }
+                        </>
+                    }
                 </div>
             </div>
 
