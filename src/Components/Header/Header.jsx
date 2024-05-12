@@ -3,7 +3,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "./Header.css"
 import { Pagination, Scrollbar, Autoplay } from 'swiper/modules';
-// import { Typewriter } from 'react-simple-typewriter';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 const Header = () => {
@@ -23,9 +23,9 @@ const Header = () => {
             >
 
                 <SwiperSlide>
-                    <div className=' h-screen slide1'>
-                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
-                            <h2 className='text-lg sm:text-2xl  font-semibold font-cookie'>Enjoy Food Enjoy Life</h2>
+                    <div className=' h-screen slide1' >
+                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3 animate__animated animate__backInLeft' >
+                            <h2 className='text-lg sm:text-2xl  font-semibold font-cookie '>Enjoy Food Enjoy Life</h2>
                             <h1 className=' font-rufina text-2xl sm:text-3xl md:text-5xl'>Deliciousness jumping into the mouth</h1>
                             <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3'>All Foods</button></Link>
                         </div>
@@ -33,7 +33,7 @@ const Header = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' h-screen slide2'>
-                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3'>
+                        <div className='max-w-[1600px] mx-auto  flex flex-col sm:items-center items-start justify-center h-screen px-3 space-y-3 '>
                             <h2 className='text-lg sm:text-2xl  font-semibold font-cookie'>Good Food Good Mood</h2>
                             <h1 className='font-rufina text-2xl sm:text-3xl md:text-5xl'>Enjoy delicious food with family</h1>
                             <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3'>All Foods</button></Link>

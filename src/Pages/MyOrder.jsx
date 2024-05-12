@@ -51,7 +51,7 @@ const MyOrder = () => {
 
             {/* Components */}
             <div className="flex flex-col justify-center items-center my-10">
-                <h2 className="text-2xl sm:text-4xl  mb-5 font-rufina font-bold">My Purchased Food Items</h2>
+                <h2 className="text-2xl sm:text-4xl  mb-5 font-rufina font-bold animate__animated animate__backInLeft">My Purchased Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
 

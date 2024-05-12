@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const FoodCart = ({ food }) => {
     const { food_name, food_image, food_category, price, _id ,purchase_number} = food;
     return (
-        <div>
-            <div className="w-full  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        
+            <div className="w-full  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800"  data-aos="fade-up" data-aos-duration="1000">
                 <img className="object-cover w-full" src={food_image} alt="avatar" />
                 <div className="p-4">
                     <div className="flex items-center justify-between">
@@ -22,7 +22,6 @@ const FoodCart = ({ food }) => {
                 </div>
             </div>
         </div>
-        </div >
     );
 };
 

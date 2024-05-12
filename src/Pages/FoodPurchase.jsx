@@ -51,8 +51,8 @@ const FoodPurchase = () => {
             </Helmet>
 
             {/* Components */}
-            <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-                <h2 className=" text-2xl sm:text-4xl font-semibold text-center font-rufina mb-5">Purchase Food</h2>
+            <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800"   data-aos="fade-up" data-aos-duration="1000">
+                <h2 className=" text-2xl sm:text-4xl font-semibold text-center font-rufina mb-5 animate__animated animate__backInRight">Purchase Food</h2>
 
                 <form onSubmit={handlePurchase}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">

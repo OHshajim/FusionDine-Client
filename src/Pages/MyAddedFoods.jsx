@@ -63,7 +63,7 @@ const MyAddedFoods = () => {
 
             {/* Components */}
             <div className="flex flex-col justify-center items-center my-10">
-                <h2 className="text-2xl sm:text-4xl font-bold  mb-4 font-rufina">My Added Food Items</h2>
+                <h2 className="text-2xl sm:text-4xl font-bold  mb-4 font-rufina animate__animated animate__backInLeft">My Added Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
 

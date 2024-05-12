@@ -53,7 +53,7 @@ const Login = () => {
             </Helmet>
 
             {/* Components */}
-            <div className='flex w-full max-w-sm mx-auto overflow-hidden  rounded-lg shadow-2xl  lg:max-w-4xl '>
+            <div className='flex w-full max-w-sm mx-auto overflow-hidden  rounded-lg shadow-2xl  lg:max-w-4xl '   data-aos="fade-up" data-aos-duration="1000">
                 <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'
                     style={{
@@ -62,7 +62,7 @@ const Login = () => {
                 ></div>
 
                 <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
-                    <p className='mt-3 text-2xl text-center text-gray-400 font-rufina'>
+                    <p className='mt-3 text-2xl text-center text-gray-400 font-rufina animate__animated animate__backInRight'>
                         Welcome back!
                     </p>
 

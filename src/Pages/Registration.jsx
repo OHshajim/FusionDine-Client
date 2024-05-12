@@ -32,7 +32,7 @@ const Registration = () => {
   }
 
   return (
-    <div className='flex justify-center items-center  py-20'>
+    <div className='flex justify-center items-center  py-20'   data-aos="fade-down" data-aos-duration="1000">
       {/* title */}
       <Helmet>
         <title>FusionDine || Registration</title>
@@ -43,7 +43,7 @@ const Registration = () => {
         <div className='w-full px-6 py-8 md:px-8 lg:w-1/2'>
           <div className='flex items-center justify-center mt-4'>
 
-            <p className='mt-3 text-2xl text-center text-gray-400 font-rufina '>
+            <p className='mt-3 text-2xl text-center text-gray-400 font-rufina animate__animated animate__backInLeft'>
               Welcome back!
             </p>
 

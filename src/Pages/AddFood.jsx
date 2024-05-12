@@ -47,11 +47,11 @@ const AddFood = () => {
             <div className="py-20">
 
                 <div className="flex flex-col justify-center items-center my-10">
-                    <h2 className="text-2xl font-bold sm:text-4xl font-rufina  mb-4">Add Food</h2>
+                    <h2 className="text-2xl font-bold sm:text-4xl font-rufina  mb-4 animate__animated animate__backInRight ">Add Food</h2>
                     <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
                 </div>
 
-                <form className=" space-y-4" onSubmit={handleAddFood}>
+                <form className=" space-y-4" onSubmit={handleAddFood}   data-aos="fade-up" data-aos-duration="1000">
                     <div className="w-full flex md:flex-row  flex-col gap-5">
                         <div className="flex flex-col md:w-1/2">
                             <label className="text-lg mb-1 font-semi-bold">User Name</label>

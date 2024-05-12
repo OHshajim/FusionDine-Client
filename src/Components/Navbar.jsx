@@ -48,7 +48,7 @@ const Navbar = () => {
     window.addEventListener("scroll", setFixed)
     return (
         <div>
-            <div className={fix ? "navbar fixed z-10  duration-500 bg-black text-white" : "text-white navbar  duration-300 fixed z-10"}>
+            <div className={fix ? "navbar fixed z-10  duration-500 bg-black text-white" : "text-white navbar  duration-300 fixed z-10"} data-aos-duration="1000" data-aos="fade-down">
                 <div className="navbar-start">
                     <div className="dropdown ">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

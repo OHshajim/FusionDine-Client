@@ -19,7 +19,7 @@ const SingleFood = () => {
 
             {/* Components */}
             <div className="flex flex-col justify-center items-center mb-10">
-                <h2 className="text-4xl mb-4">Food Details </h2>
+                <h2 className="text-4xl mb-4 animate__animated animate__backInLeft">Food Details </h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
             <div className="flex card lg:card-side  shadow-2xl w-full">

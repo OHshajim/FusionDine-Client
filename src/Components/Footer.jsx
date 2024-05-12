@@ -2,8 +2,8 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div>
-            <div className="bg-[url('https://i.ibb.co/cX2HvTb/bg-3.jpg')] ">
+        <div data-aos-duration="1000" data-aos="fade-up">
+            <div className="bg-[url('https://i.ibb.co/cX2HvTb/bg-3.jpg')] " >
                 <footer className="footer flex lg:flex-row  flex-col justify-between mx-auto max-w-[1600px] items-start md:items-center p-5 md:py-20  text-neutral-content place-items-center">
                     <aside>
                         <h2 className="text-3xl font-bold font-cookie">FusionDine</h2>
