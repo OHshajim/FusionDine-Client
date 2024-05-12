@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const AddFood = () => {
-    const { user ,URL} = useContext(AuthContext)
+    const { user, URL } = useContext(AuthContext)
 
     const handleAddFood = async (e) => {
         e.preventDefault();
@@ -36,6 +37,13 @@ const AddFood = () => {
     }
     return (
         <div className="max-w-[1600px] mx-auto px-5">
+            {/* title */}
+            <Helmet>
+                <title>FusionDine || Add Food</title>
+                <link rel="canonical" href="https://www.tacobell.com/" />
+            </Helmet>
+
+            {/* Components */}
             <div className="py-20">
 
                 <div className="flex flex-col justify-center items-center my-10">

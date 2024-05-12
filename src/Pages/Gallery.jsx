@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import Review from "../Components/Review";
 import { GrAdd } from "react-icons/gr";
+import { Helmet } from "react-helmet-async";
 
 const Gallery = () => {
     const { URL } = useContext(AuthContext)
@@ -39,6 +40,13 @@ const Gallery = () => {
     // }
     return (
         <div>
+            {/* title */}
+            <Helmet>
+                <title>FusionDine || Food Gallery</title>
+                <link rel="canonical" href="https://www.tacobell.com/" />
+            </Helmet>
+
+            {/* Components */}
             <div className="bg-[linear-gradient(rgba(19,19,19,0.6),rgba(19,19,19,0.6)),url('https://i.ibb.co/GcgrdDY/breadcumb-bg-1-1.jpg')] bg-no-repeat bg-cover bg-center">
                 <div className="h-[40vh] flex flex-col items-center justify-center">
                     <h1 className="text-xl lg:text-5xl font-bold text-white text-center mb-5">Our Food Gallery</h1>

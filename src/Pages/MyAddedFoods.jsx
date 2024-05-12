@@ -5,6 +5,7 @@ import { useContext, useEffect } from "react";
 import { useState } from "react";
 import FoodTable from "../Components/FoodTable";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const MyAddedFoods = () => {
     const { user, URL } = useContext(AuthContext)
@@ -44,6 +45,13 @@ const MyAddedFoods = () => {
 
     return (
         <div className="py-20 max-w-[1600px] mx-auto px-5">
+            {/* title */}
+            <Helmet>
+                <title>FusionDine || My Added Foods</title>
+                <link rel="canonical" href="https://www.tacobell.com/" />
+            </Helmet>
+
+            {/* Components */}
             <div className="flex flex-col justify-center items-center my-10">
                 <h2 className="text-4xl  mb-4">My Added Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
