@@ -35,7 +35,7 @@ const FoodTable = ({ food, updateFood, handleDelete, id }) => {
                 <td className="text-sm font-semibold">{food_origin}</td>
                 <td className="text-sm font-semibold">{quantity}</td>
 
-                <td className="text-sm font-semibold">{price}</td>
+                <td className="text-sm font-semibold">${price}</td>
                 <td >
                     <div className="flex  gap-5">
                         {/* update */}

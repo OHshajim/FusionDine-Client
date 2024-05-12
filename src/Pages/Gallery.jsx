@@ -37,7 +37,7 @@ const Gallery = () => {
             console.log(data);
             loadData()
             SetLoad(false)
-
+            form.reset()
         }
         catch (error) {
             console.error(error);
@@ -71,7 +71,7 @@ const Gallery = () => {
                     foodReviews.map(review => <Review key={review._id} review={review} />)
                 }
             </div>
-            <Link to={!user&&"/login"}><button onClick={() => document.getElementById('my_modal_1').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base"><span> <GrAdd /></span> Add</button></Link>
+            <Link to={!user&&"/login"}><button onClick={() => document.getElementById('my_modal_1').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base  border-orange-400 text-orange-400 "><span> <GrAdd /></span> Add</button></Link>
 
             {/* Model */}
 
@@ -103,7 +103,7 @@ const Gallery = () => {
                                     <input type="text" name="photo" placeholder="Photo URL" required className=" w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
                                 </label>
                             </div>
-                            <input type="submit" value="Update" className="btn w-full bg-transparent btn-outline border-cyan-500 text-cyan-500 " />
+                            <input type="submit" value="Update" className="btn w-full bg-transparent btn-outline border-orange-400 text-orange-400 " />
                         </form>
                     </div>
                 </div>

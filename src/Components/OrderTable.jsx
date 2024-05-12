@@ -21,7 +21,7 @@ const OrderTable = ({ food, deleteFood }) => {
                 </td>
                 <td className="text-sm font-semibold">{quantity}</td>
 
-                <td className="text-sm font-semibold">{price}</td>
+                <td className="text-sm font-semibold">${price}</td>
                 <td className="text-sm font-semibold">{buyingDate}</td>
                 <td>
 

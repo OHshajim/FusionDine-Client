@@ -13,7 +13,7 @@ const FoodCart = ({ food }) => {
                             <p>Purchase Number : {purchase_number}</p>
                         </div>
                         <div className="flex flex-col items-center gap-2">
-                            <p className="border py-0.5 px-3 rounded-full ">{price}</p>
+                            <p className="border py-0.5 px-3 rounded-full ">${price}</p>
                             <p className="border py-0.5 px-3 rounded-full ">{food_category}</p>
                         </div>
                     </div>

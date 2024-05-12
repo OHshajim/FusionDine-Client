@@ -1,17 +1,18 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 const FoodPurchase = () => {
+    const navigate = useNavigate()
     const [startDate, setStartDate] = useState(new Date());
     const { user, URL } = useContext(AuthContext)
     const foodData = useLoaderData()
     // console.log(foodData);
-    const { food_name, price, food_image, add_by, quantity, _id } = foodData;
+    const { food_name, price, food_image, add_by, quantity, _id, purchase_number } = foodData;
     const quantityNumber = quantity;
     const handlePurchase = async (e) => {
         e.preventDefault()
@@ -30,16 +31,35 @@ const FoodPurchase = () => {
         if (quantity > quantityNumber) {
             return toast.error('This Number of quantity is not available !!!');
         }
-        // const availableQuantity = quantityNumber - quantity ;
-        try {
-            const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
-            console.log(data);
-            toast.success('This food is  Successfully purchased  🌟')
-        }
-        catch (error) {
-            console.error(error);
-            toast.error('Error !!! Try again')
-        }
+        const availableQuantity = quantityNumber - quantity;
+        const total = parseInt(quantity) + parseInt(purchase_number);
+        // try {
+        //     const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
+        //     console.log(data);
+        //     
+        // }
+        // catch (error) {
+        //     console.error(error);
+        //     toast.error('Error !!! Try again')
+        // }
+        axios.post(`${URL}/purchaseFood`, PurchasedFood)
+            .then(res => {
+                console.log(res.data);
+                const count = { ...PurchasedFood, availableQuantity: availableQuantity, total: total }
+                axios.put(`${URL}/updateQuantity/${_id}`, count)
+                    .then(res => {
+                        console.log(res.data);
+                        toast.success('This food is  Successfully purchased  🌟')
+                        navigate('/')
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
     }
     return (
         <div className="py-20">

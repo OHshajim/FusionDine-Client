@@ -39,7 +39,7 @@ const SingleFood = () => {
                             <p><span className="font-semibold sm:text-lg" >Quantity :</span> {quantity}</p>
                             <p><span className="font-semibold sm:text-lg" >Purchase Number :</span> {purchase_number}</p>
                         </div>
-                        <h4 className="text-orange-400"><span className="font-semibold sm:text-lg" >Price :</span> {price}</h4>
+                        <h4 className="text-orange-400"><span className="font-semibold sm:text-lg" >Price :</span> ${price}</h4>
                     </div>
                     <div className="card-actions justify-end">
                         <Link to={`/foodPurchase/${_id}`} className={` btn w-full btn-outline text-orange-400 border-orange-400 ${quantity <= 0 && "btn-disabled "}`}> <button >Purchase</button></Link>
