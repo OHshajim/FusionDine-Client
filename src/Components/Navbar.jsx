@@ -85,7 +85,7 @@ const Navbar = () => {
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
                                             <Link to="/addFood">Add a food item</Link></li>
                                         <li className=" active:border hover:border hover:font-semibold p-2 rounded-xl">
-                                            <Link>My ordered food items</Link></li>
+                                            <Link to='/myPurchaseFoods'>My ordered food items</Link></li>
                                     </ul>
                                 </div>
                                 <div className="flex gap-2">

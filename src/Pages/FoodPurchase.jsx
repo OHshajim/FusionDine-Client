@@ -10,7 +10,7 @@ const FoodPurchase = () => {
     const { user, URL } = useContext(AuthContext)
     const foodData = useLoaderData()
     console.log(foodData);
-    const { food_name, price } = foodData
+    const { food_name, price, food_image } = foodData
     const handlePurchase = async (e) => {
         e.preventDefault()
         const form = e.target;
@@ -20,12 +20,14 @@ const FoodPurchase = () => {
         const buyerName = form.buyerName.value;
         const buyerEmail = form.buyerEmail.value;
         const buyingDate = form.buyingDate.value;
-        const PurchasedFood = { food_name, price, quantity, buyerEmail, buyerName, buyingDate }
-        console.log(PurchasedFood);
-
+        const PurchasedFood = { food_name, price, quantity, buyerEmail, buyerName, buyingDate, food_image }
+        // console.log(PurchasedFood);
+        if (buyerEmail === user.email) {
+            return toast.error('You can not purchase your own item');
+        }
         try {
             const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
-            console.log(data);
+            // console.log(data);
             toast.success('This food is  Successfully purchased  🌟')
         }
         catch (error) {
