@@ -4,6 +4,7 @@ import axios from "axios";
 import Review from "../Components/Review";
 import { GrAdd } from "react-icons/gr";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
     const { URL, user } = useContext(AuthContext)
@@ -70,7 +71,7 @@ const Gallery = () => {
                     foodReviews.map(review => <Review key={review._id} review={review} />)
                 }
             </div>
-            <button onClick={() => document.getElementById('my_modal_1').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base"><span> <GrAdd /></span> Add</button>
+            <Link to={!user&&"/login"}><button onClick={() => document.getElementById('my_modal_1').showModal()} className=" fixed  bottom-8 right-8 btn btn-outline rounded-full font-bold text-base"><span> <GrAdd /></span> Add</button></Link>
 
             {/* Model */}
 

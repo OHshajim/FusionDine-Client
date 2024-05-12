@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 // import loginImg from "../assets/images/login.jpg"
 // import logo from "../assets/images/logo.png"
 // import toast from 'react-hot-toast';
@@ -9,8 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const navigate = useNavigate()
-    // const location =useLocation()
-    // console.log(location);
+    const location = useLocation()
     const { Login, loginWithGoogle } = useContext(AuthContext)
 
     // email and password Login 
@@ -24,7 +23,7 @@ const Login = () => {
             const result = await Login(email, password)
             console.log(result);
             toast.success(' Successfully logged in ')
-            navigate('/')
+            navigate(location?.state ? location.state : "/")
         }
         catch (err) {
             console.log(err);
@@ -36,7 +35,7 @@ const Login = () => {
         try {
             await loginWithGoogle()
             toast.success(' Successfully logged in 🌟')
-            navigate('/')
+            navigate(location?.state ? location.state : "/")
         }
         catch (error) {
             console.log(error);
@@ -53,7 +52,7 @@ const Login = () => {
             </Helmet>
 
             {/* Components */}
-            <div className='flex w-full max-w-sm mx-auto overflow-hidden  rounded-lg shadow-2xl  lg:max-w-4xl '   data-aos="fade-up" data-aos-duration="1000">
+            <div className='flex w-full max-w-sm mx-auto overflow-hidden  rounded-lg shadow-2xl  lg:max-w-4xl ' data-aos="fade-up" data-aos-duration="1000">
                 <div
                     className='hidden bg-cover bg-center lg:block lg:w-1/2'
                     style={{

@@ -11,6 +11,7 @@ import Gallery from "../Pages/Gallery";
 import AddFood from "../Pages/AddFood";
 import MyAddedFoods from "../Pages/MyAddedFoods";
 import MyOrder from "../Pages/MyOrder";
+import PrivetRoute from "./PrivetRoute";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -31,15 +32,15 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/addFood",
-                element: <AddFood />,
+                element: <PrivetRoute><AddFood /></PrivetRoute>,
             },
             {
                 path: "/myAddedFoods",
-                element: <MyAddedFoods />,
+                element: <PrivetRoute><MyAddedFoods /></PrivetRoute>,
             },
             {
                 path: "/myPurchaseFoods",
-                element: <MyOrder />,
+                element: <PrivetRoute><MyOrder /></PrivetRoute>,
             },
             {
                 path: "/singleFood/:id",
@@ -48,7 +49,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/foodPurchase/:id",
-                element: <FoodPurchase />,
+                element: <PrivetRoute><FoodPurchase /></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/singleFood/${params.id}`)
             },
             {
