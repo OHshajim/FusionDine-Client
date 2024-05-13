@@ -5,8 +5,10 @@ import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/Firebase.config";
+import axios from "axios";
 
 const Registration = () => {
+  const { URL } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
   const { createUser } = useContext(AuthContext)
@@ -28,8 +30,16 @@ const Registration = () => {
         })
           .then(() => {
             console.log(auth.currentUser)
+            const { displayName, photoURL, email } = auth.currentUser
+            const user = { displayName, photoURL, email }
+            console.log("user : ", user);
             // setUser( {...user, photoURL: photo, displayName: name })
             toast.success('🎉 Registration Successful 🎉')
+
+            axios.post(`${URL}/user`, user)
+              .then(res => { console.log(res.data); })
+              .catch(err => { console.log(err); })
+
             navigate(location?.state ? location.state : "/")
           })
           .catch(error => {
@@ -159,7 +169,7 @@ const Registration = () => {
         <div
           className='hidden bg-cover bg-center lg:block lg:w-1/2'
           style={{
-              backgroundImage: `url('https://i.ibb.co/Xb3LGZ3/20943830.jpg')`,
+            backgroundImage: `url('https://i.ibb.co/Xb3LGZ3/20943830.jpg')`,
           }}
         ></div>
       </div>
