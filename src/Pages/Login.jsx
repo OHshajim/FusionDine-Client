@@ -1,13 +1,12 @@
 import { useContext } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
-// import loginImg from "../assets/images/login.jpg"
-// import logo from "../assets/images/logo.png"
-// import toast from 'react-hot-toast';
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
+
 const Login = () => {
+
     const navigate = useNavigate()
     const location = useLocation()
     const { Login, loginWithGoogle } = useContext(AuthContext)
@@ -18,7 +17,15 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value
         const password = form.password.value
-        console.log(email, password);
+
+        // validation
+        if (email == "" || password == "") {
+            return toast.error('please Fill up the form ')
+        }
+        if (password.length < 6) {
+            return toast.error('password must be more than 6 letter')
+        }
+
         try {
             const result = await Login(email, password)
             console.log(result);
@@ -110,7 +117,7 @@ const Login = () => {
                                 Email Address
                             </label>
                             <input
-                                required
+
                                 id='LoggingEmailAddress'
                                 autoComplete='email'
                                 name='email'
@@ -131,7 +138,7 @@ const Login = () => {
                             </div>
 
                             <input
-                                required
+
                                 id='loggingPassword'
                                 autoComplete='current-password'
                                 name='password'

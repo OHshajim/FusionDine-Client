@@ -8,10 +8,9 @@ import auth from "../Firebase/Firebase.config";
 import axios from "axios";
 
 const Registration = () => {
-  const { URL } = useContext(AuthContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const { createUser } = useContext(AuthContext)
+  const { createUser ,URL} = useContext(AuthContext)
 
   // email and password register
   const handleRegister = async e => {
@@ -22,6 +21,13 @@ const Registration = () => {
     const email = form.email.value
     const password = form.password.value
 
+    // validation
+    if (name == "" || photo == "" || email == "" || password == "") {
+      return toast.error('please Fill up the form ')
+    }
+    if (password.length < 6) {
+      return toast.error('password must be more than 6 letter')
+    }
     createUser(email, password)
       .then(result => {
         console.log(result);
@@ -45,12 +51,14 @@ const Registration = () => {
           .catch(error => {
             console.log(error);
             toast.error(error?.message)
+
           })
       })
       .catch(error => {
 
         console.log(error);
         toast.error(error?.message)
+        toast.error('Error !!! Try again')
       })
   }
   return (
@@ -79,7 +87,7 @@ const Registration = () => {
                 Username
               </label>
               <input
-                required
+
                 placeholder="Enter Your name"
                 id='name'
                 autoComplete='name'
@@ -96,7 +104,7 @@ const Registration = () => {
                 Photo URL
               </label>
               <input
-                required
+
                 placeholder="Enter Your photo"
                 id='photo'
                 autoComplete='photo'
@@ -113,7 +121,7 @@ const Registration = () => {
                 Email Address
               </label>
               <input
-                required
+
                 placeholder="Enter Your Email"
                 id='LoggingEmailAddress'
                 autoComplete='email'
@@ -134,7 +142,7 @@ const Registration = () => {
               </div>
 
               <input
-                required
+
                 placeholder="Enter Your Password"
                 id='loggingPassword'
                 autoComplete='current-password'
