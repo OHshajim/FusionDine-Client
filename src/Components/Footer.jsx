@@ -28,7 +28,7 @@ const Footer = () => {
 
             <footer className="footer footer-center p-5 bg-black text-base-content">
                 <aside>
-                    <p>Copyright © 2024 - All right reserved by <span className="font-bold text-sm text-orange-400">FusionDine</span> Industries Ltd</p>
+                    <p>Copyright © 2024 - All right reserved by <span className="font-bold text-sm font-cookie text-orange-400">FusionDine</span> Industries Ltd</p>
                 </aside>
             </footer>
         </div>

@@ -159,7 +159,7 @@ const Registration = () => {
         <div
           className='hidden bg-cover bg-center lg:block lg:w-1/2'
           style={{
-            //   backgroundImage: `url('${bgImg}')`,
+              backgroundImage: `url('https://i.ibb.co/Xb3LGZ3/20943830.jpg')`,
           }}
         ></div>
       </div>

@@ -45,12 +45,12 @@ const Router = createBrowserRouter([
             {
                 path: "/singleFood/:id",
                 element: <SingleFood />,
-                loader: ({ params }) => fetch(`http://localhost:5000/singleFood/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a11-server-side.vercel.app/singleFood/${params.id}`)
             },
             {
                 path: "/foodPurchase/:id",
                 element: <PrivetRoute><FoodPurchase /></PrivetRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/singleFood/${params.id}`)
+                loader: ({ params }) => fetch(`https://b9a11-server-side.vercel.app/singleFood/${params.id}`)
             },
             {
                 path: "/login",

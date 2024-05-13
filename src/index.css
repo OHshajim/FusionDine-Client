@@ -1,3 +1,4 @@
+/*Tailwind Css*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,13 +12,14 @@
 }
 
 .font-cookie {
-        font-family: "Cookie", cursive;
-        font-style: normal;
+    font-family: "Cookie", cursive;
+    font-style: normal;
 }
 
-body{
+body {
     font-family: "Lato", sans-serif;
 }
+
 
 /* Loader */
 .loader {

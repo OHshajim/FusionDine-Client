@@ -33,15 +33,7 @@ const FoodPurchase = () => {
         }
         const availableQuantity = quantityNumber - quantity;
         const total = parseInt(quantity) + parseInt(purchase_number);
-        // try {
-        //     const { data } = await axios.post(`${URL}/purchaseFood`, PurchasedFood)
-        //     console.log(data);
-        //     
-        // }
-        // catch (error) {
-        //     console.error(error);
-        //     toast.error('Error !!! Try again')
-        // }
+ 
         axios.post(`${URL}/purchaseFood`, PurchasedFood)
             .then(res => {
                 console.log(res.data);

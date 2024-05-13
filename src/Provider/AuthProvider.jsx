@@ -10,7 +10,8 @@ const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState({})
   const [loading, setLoad] = useState(true)
-  const URL = 'http://localhost:5000'
+  const URL = 'https://b9a11-server-side.vercel.app'
+  // https://b9a11-server-side.vercel.app/
   // create user 
   const createUser = (email, password) => {
     setLoad(true)
@@ -27,7 +28,7 @@ const AuthProvider = ({ children }) => {
     setLoad(true);
     return signInWithPopup(auth, provider);
   }
-  
+
   // Logout
   const Logout = () => {
     setLoad(true)
