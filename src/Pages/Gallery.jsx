@@ -5,6 +5,7 @@ import Review from "../Components/Review";
 import { GrAdd } from "react-icons/gr";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Gallery = () => {
     const { URL, user } = useContext(AuthContext)
@@ -37,10 +38,12 @@ const Gallery = () => {
             console.log(data);
             loadData()
             SetLoad(false)
+            toast.success('🎉 Successful Added 🎉')
             form.reset()
         }
         catch (error) {
             console.error(error);
+            toast.error('Error !!! Try again')
         }
     }
 

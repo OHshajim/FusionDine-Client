@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import FoodCart from "./FoodCart";
+import { Link } from "react-router-dom";
 
 const TopFoods = () => {
     const [loading, SetLoad] = useState(true)
@@ -35,6 +36,9 @@ const TopFoods = () => {
                 {
                     foods.map(food => <FoodCart key={food._id} food={food} />)
                 }
+            </div>
+            <div className="flex justify-center">
+                <Link to='/allFoods'><button className='btn btn-outline rounded-full px-5 mt-3 text-orange-400 border-orange-400'>All Foods</button></Link>
             </div>
         </div>
     );

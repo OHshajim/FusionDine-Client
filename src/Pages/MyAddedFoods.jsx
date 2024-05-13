@@ -29,7 +29,7 @@ const MyAddedFoods = () => {
             console.log(data);
             loadData()
             SetLoad(false)
-            toast.success('This food is  Successfully purchased  🌟')
+            toast.success('This food is  Successfully Updated 🌟')
         }
         catch (error) {
             console.error(error);

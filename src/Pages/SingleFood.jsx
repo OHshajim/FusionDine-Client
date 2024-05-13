@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
 
 const SingleFood = () => {
     const foodData = useLoaderData()
@@ -7,6 +8,9 @@ const SingleFood = () => {
     const { description, food_image, food_name, food_origin, price, quantity, food_category, add_by, _id, purchase_number
     } = foodData
     const { name, email } = add_by;
+    const handleToast = () => {
+        toast.error('item is not available')
+    }
     return (
         <div className="py-20 max-w-[1600px] mx-auto px-5">
             {/* title */}
@@ -41,8 +45,13 @@ const SingleFood = () => {
                         </div>
                         <h4 className="text-orange-400"><span className="font-semibold sm:text-lg" >Price :</span> ${price}</h4>
                     </div>
-                    <div className="card-actions justify-end">
-                        <Link to={`/foodPurchase/${_id}`} className={` btn w-full btn-outline text-orange-400 border-orange-400 ${quantity <= 0 && "btn-disabled "}`}> <button >Purchase</button></Link>
+                    <div className="card-actions justify-end" >
+                        {
+                            quantity <= 0 ?
+                                <button onClick={handleToast} className="w-full btn-outline text-orange-400 border-orange-400 btn">Purchase</button>
+                                :
+                                <Link to={`/foodPurchase/${_id}`} className=' btn w-full btn-outline text-orange-400 border-orange-400 '> <button >Purchase</button></Link>
+                        }
                     </div>
                 </div>
             </div>
