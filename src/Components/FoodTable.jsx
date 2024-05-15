@@ -66,7 +66,7 @@ const FoodTable = ({ food, updateFood, handleDelete, id }) => {
             </tr>
             <dialog id={"my_modal_5" + id} className="modal">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-center">Update Your Added Food Details{_id}</h3>
+                    <h3 className="font-bold text-lg text-center">Update Your Added Food Details</h3>
                     <div className="modal-action">
                         <form method="dialog" onSubmit={handleUpdate}>
 
