@@ -11,7 +11,7 @@ const MyAddedFoods = () => {
     const { user, URL } = useContext(AuthContext)
     const [foods, setFood] = useState([])
     const [loading, SetLoad] = useState(true)
-    const loadData = async () => {
+    const loadData = (async () => {
         try {
             const { data } = await axios(`${URL}/myFoods/${user.email}`, { withCredentials: true })
             setFood(data)
@@ -20,7 +20,7 @@ const MyAddedFoods = () => {
         catch (error) {
             console.error(error);
         }
-    }
+    })
 
     const updateFood = async (updatedFood, id) => {
         SetLoad(true)
@@ -52,7 +52,7 @@ const MyAddedFoods = () => {
     }
     useEffect(() => {
         loadData()
-    }, [user])
+    }, [loadData, user])
 
     return (
         <div className="py-20 max-w-[1600px] mx-auto px-5">
@@ -66,9 +66,6 @@ const MyAddedFoods = () => {
                 <h2 className="text-2xl sm:text-4xl font-bold  mb-4 font-rufina animate__animated animate__backInLeft">My Added Food Items</h2>
                 <img src="https://i.ibb.co/7gGBjGX/sec-title-2.png" alt="logo" />
             </div>
-
-
-
 
             <div>
                 <div className="overflow-x-auto">

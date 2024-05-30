@@ -15,8 +15,8 @@ live site URL : https://a11-b9.web.app
 8. User can also give us his/her feedback on our Gallery page .
 
 
-<!-- New Feature -->
-*** Logged Users can update his profile name or photo . 
+****New Feature
+* Logged Users can update his profile name or photo . 
 
 
 #Assignment_category_0005

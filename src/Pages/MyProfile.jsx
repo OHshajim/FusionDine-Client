@@ -6,7 +6,7 @@ import axios from "axios";
 const MyProfile = () => {
     const { user, profileUpdate, URL } = useContext(AuthContext)
     const handleUpdate = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const form = e.target;
         const name = form.name.value
         const photo = form.photo.value
@@ -18,6 +18,7 @@ const MyProfile = () => {
 
                 axios.patch(`${URL}/users`, UpdateUser)
                     .then(res => {
+                        console.log(res);
                         if (res.modifiedCount > 0) {
                             toast.success('🎉 update Successful 🎉')
                         }
