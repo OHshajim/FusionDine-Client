@@ -24,6 +24,14 @@ const Navbar = () => {
                 isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg text-orange-400 border-orange-400 " : " px-5 py-2 rounded-lg"
             }
         ><li>Gallery</li></NavLink>
+        {
+            user &&
+            <NavLink to="/myProfile"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active border px-5 py-2 rounded-lg text-orange-400 border-orange-400 " : " px-5 py-2 rounded-lg"
+                }
+            ><li>My Profile</li></NavLink>
+        }
     </>
 
     const handleLogout = async () => {

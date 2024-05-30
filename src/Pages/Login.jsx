@@ -3,13 +3,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 
 const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const { Login, loginWithGoogle } = useContext(AuthContext)
+    const { Login, loginWithGoogle, URL } = useContext(AuthContext)
 
     // email and password Login 
     const handleLogin = async e => {
@@ -40,9 +41,19 @@ const Login = () => {
     // google Login 
     const handleLoginWithGoogle = async () => {
         try {
-            await loginWithGoogle()
-            toast.success(' Successfully logged in 🌟')
-            navigate(location?.state ? location.state : "/")
+            const res = await loginWithGoogle()
+            console.log(res.user);
+            const { email, displayName, photoURL } = res.user;
+            const user = { email: email, name: displayName, photo: photoURL }
+            console.log(user);
+            await axios.post(`${URL}/users`, user)
+                .then(res => {
+                    console.log(res.data);
+                    toast.success(' Successfully logged in 🌟')
+                    navigate(location?.state ? location.state : "/")
+                })
+                .catch(err => { console.log(err); })
+
         }
         catch (error) {
             console.log(error);

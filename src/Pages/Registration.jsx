@@ -3,14 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
-import { updateProfile } from "firebase/auth";
-import auth from "../Firebase/Firebase.config";
 import axios from "axios";
 
 const Registration = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  const { createUser ,URL} = useContext(AuthContext)
+  const { createUser, URL, profileUpdate } = useContext(AuthContext)
 
   // email and password register
   const handleRegister = async e => {
@@ -31,19 +29,16 @@ const Registration = () => {
     createUser(email, password)
       .then(result => {
         console.log(result);
-        updateProfile(auth.currentUser, {
-          displayName: `${name}`, photoURL: `${photo}`
-        })
+        profileUpdate(name, photo)
           .then(() => {
-            console.log(auth.currentUser)
-            const { displayName, photoURL, email } = auth.currentUser
-            const user = { displayName, photoURL, email }
+            const user = { name, photo, email }
             console.log("user : ", user);
             // setUser( {...user, photoURL: photo, displayName: name })
-            toast.success('🎉 Registration Successful 🎉')
-
-            axios.post(`${URL}/user`, user)
-              .then(res => { console.log(res.data); })
+            axios.post(`${URL}/users`, user)
+              .then(res => {
+                console.log(res.data);
+                toast.success('🎉 Registration Successful 🎉')
+              })
               .catch(err => { console.log(err); })
 
             navigate(location?.state ? location.state : "/")
@@ -51,7 +46,6 @@ const Registration = () => {
           .catch(error => {
             console.log(error);
             toast.error(error?.message)
-
           })
       })
       .catch(error => {

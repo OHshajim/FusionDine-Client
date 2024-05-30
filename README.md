@@ -1,7 +1,7 @@
 #FusionDine 
 #Restaurant Management Website
 
-live site URL : https://a11-b9.web.app/ 
+live site URL : https://a11-b9.web.app
 
 ***Bullet Points  : 
 
@@ -13,6 +13,10 @@ live site URL : https://a11-b9.web.app/
 6. User can see his/her added foods on  My Added Food Items page and also see his/her ordered food too. 
 7. We also protect users details on server by JWT , this token expired time is 1 hour .
 8. User can also give us his/her feedback on our Gallery page .
+
+
+<!-- New Feature -->
+*** Logged Users can update his profile name or photo . 
 
 
 #Assignment_category_0005
