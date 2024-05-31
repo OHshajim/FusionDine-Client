@@ -31,7 +31,7 @@ const AllFoods = () => {
             return loadData();
         }
         try {
-            const { data } = await axios(`${URL}/food/${search}`)
+            const { data } = await axios(`${URL}/food?search=${search}`)
             console.log(data);
             setFoods(data)
             SetLoad(false)
