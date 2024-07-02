@@ -46,4 +46,4 @@ VITE_appId= {firebase} </br>
 
 
 <h3>****** Technologies ******</h3>
-React.js || Firebase || Axios || JWT
+React.js || Firebase || Tailwind CSS || DaisyUI || Axios || JWT
